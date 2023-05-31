@@ -1,0 +1,389 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Papa-Jhons.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Papa-Jhons.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\css\\style.compressed.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.compressed.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\css\\style.prefix.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.prefix.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\1Bonaqua.png",
+      "PackagePath": "staticwebassets\\assets\\images\\1Bonaqua.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\1Coca-cola-shekersiz.png",
+      "PackagePath": "staticwebassets\\assets\\images\\1Coca-cola-shekersiz.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\1Fanta.png",
+      "PackagePath": "staticwebassets\\assets\\images\\1Fanta.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\1Fusetea.png",
+      "PackagePath": "staticwebassets\\assets\\images\\1Fusetea.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\1Sprite.png",
+      "PackagePath": "staticwebassets\\assets\\images\\1Sprite.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\1cocacola.png",
+      "PackagePath": "staticwebassets\\assets\\images\\1cocacola.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Acili-çiken-ranç-papadias.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Acili-çiken-ranç-papadias.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Caesar Salad.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Caesar Salad.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Calzone_Pepperoni.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Calzone_Pepperoni.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Cheddar-Dabl-Burger.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Cheddar-Dabl-Burger.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Cheddar-Mexican-Papadias-yeni-sayt.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Cheddar-Mexican-Papadias-yeni-sayt.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Cheddar-Pendirli-çubuqlar.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Cheddar-Pendirli-çubuqlar.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Cheddar-Rolls.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Cheddar-Rolls.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Dabl-cheddar-çİzburger-Papadİas-yeni-sayt.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Dabl-cheddar-çİzburger-Papadİas-yeni-sayt.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Garden Slad.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Garden Slad.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Greek Salad.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Greek Salad.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Grill-Çiken-Parmezan.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Grill-Çiken-Parmezan.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Nyu-Orleans-papadİas-yeni-sayt.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Nyu-Orleans-papadİas-yeni-sayt.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Spicy-chicken-ranch.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Spicy-chicken-ranch.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Tuna Salad_no_tomato_Azer_158_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Tuna Salad_no_tomato_Azer_158_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\american-hot.png",
+      "PackagePath": "staticwebassets\\assets\\images\\american-hot.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\chicken_ranch.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\chicken_ranch.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\footer.png",
+      "PackagePath": "staticwebassets\\assets\\images\\footer.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\italyan.png.png",
+      "PackagePath": "staticwebassets\\assets\\images\\italyan.png.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\milla.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\milla.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\offers-1.jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\offers-1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\offers-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\offers-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\offers-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\offers-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\offers-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\offers-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\offers-5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\offers-5.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\offers-6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\offers-6.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\offers-7.png",
+      "PackagePath": "staticwebassets\\assets\\images\\offers-7.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\offers-8.png",
+      "PackagePath": "staticwebassets\\assets\\images\\offers-8.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\order-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\order-1.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\order-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\order-2.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\order-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\order-3.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\papamiks-sayt.png",
+      "PackagePath": "staticwebassets\\assets\\images\\papamiks-sayt.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\pasta_chicken_ranch.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\pasta_chicken_ranch.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\pasta_mamas_pasta.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\pasta_mamas_pasta.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\pasta_super_papa.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\pasta_super_papa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\pendirli-chubuqlar-bikon (1).png",
+      "PackagePath": "staticwebassets\\assets\\images\\pendirli-chubuqlar-bikon (1).png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\pendirli-mütəkkələr.png",
+      "PackagePath": "staticwebassets\\assets\\images\\pendirli-mütəkkələr.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\pendirli_cubuqlar.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\pendirli_cubuqlar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\pizza1.png.png",
+      "PackagePath": "staticwebassets\\assets\\images\\pizza1.png.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\pj_logo_web_new.png",
+      "PackagePath": "staticwebassets\\assets\\images\\pj_logo_web_new.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\slider-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\slider-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\slider-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\slider-2.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\slider-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\slider-3.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\slider-4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\slider-4.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\slider-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\slider-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\slider-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\slider-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\slider-7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\slider-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\slider-8.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\slider-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\slider-9.png",
+      "PackagePath": "staticwebassets\\assets\\images\\slider-9.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\vegetarian-acili.png",
+      "PackagePath": "staticwebassets\\assets\\images\\vegetarian-acili.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Çiken-BBQ-Papadias.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Çiken-BBQ-Papadias.png"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\js\\dessert.js",
+      "PackagePath": "staticwebassets\\assets\\js\\dessert.js"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\js\\drinks.js",
+      "PackagePath": "staticwebassets\\assets\\js\\drinks.js"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\js\\index.js",
+      "PackagePath": "staticwebassets\\assets\\js\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\js\\papadias.js",
+      "PackagePath": "staticwebassets\\assets\\js\\papadias.js"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\js\\pasta.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pasta.js"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\js\\pizza.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pizza.js"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\js\\salads.js",
+      "PackagePath": "staticwebassets\\assets\\js\\salads.js"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\js\\sauces.js",
+      "PackagePath": "staticwebassets\\assets\\js\\sauces.js"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\js\\snackes.js",
+      "PackagePath": "staticwebassets\\assets\\js\\snackes.js"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\_base.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_base.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\_components.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_components.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\_typography.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_typography.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\main.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\main.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_account.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_account.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_checkout.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_checkout.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_dessert.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_dessert.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_drinks.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_drinks.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_index.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_index.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_offers.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_offers.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_papadias.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_papadias.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_pasta.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_pasta.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_pizza.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_pizza.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_salads.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_salads.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_sauces.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_sauces.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_snackes.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_snackes.scss"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\template\\AcceptedMail.html",
+      "PackagePath": "staticwebassets\\assets\\template\\AcceptedMail.html"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\template\\RejectedMail.html",
+      "PackagePath": "staticwebassets\\assets\\template\\RejectedMail.html"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\template\\ResetPassword.html",
+      "PackagePath": "staticwebassets\\assets\\template\\ResetPassword.html"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\template\\StickyacceptedMail.html",
+      "PackagePath": "staticwebassets\\assets\\template\\StickyacceptedMail.html"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\template\\StickyrejectedMail.html",
+      "PackagePath": "staticwebassets\\assets\\template\\StickyrejectedMail.html"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\template\\verifyemail.html",
+      "PackagePath": "staticwebassets\\assets\\template\\verifyemail.html"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Papa-Jhons.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Papa-Jhons.props",
+      "PackagePath": "build\\Papa-Jhons.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Papa-Jhons.props",
+      "PackagePath": "buildMultiTargeting\\Papa-Jhons.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Papa-Jhons.props",
+      "PackagePath": "buildTransitive\\Papa-Jhons.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,143 @@
+﻿@model List<Product>
+@{
+    Category category = ViewBag.Category;
+    List<PizzaCategory> pizzaCategories = ViewBag.PizzaCategory;
+}
+
+<section class="pizza-section">
+    <div class="container-fluid px-4 px-sm-5">
+        <h1>@category.Name</h1>
+        @if (category.Name == "Pizza")
+        {
+
+            <ul class="nav nav-pills mb-5" id="pills-tab" role="tablist">
+                @foreach (var item in pizzaCategories)
+                {
+                    <li class="nav-item m-3" role="presentation">
+                        <form asp-controller="product" asp-action="pizzaview" asp-route-category="@item.Id" asp-route-id="@category.Id" method="post">
+                            <button class="nav-link active" id="pills-all-tab">
+                                @item.Name
+                            </button>
+                        </form>
+                    </li>
+
+                }
+             
+             
+              
+            </ul>
+        }
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                            <div class="pizza-img" data-bs-toggle="modal" data-bs-target="#pizzaModal-@item.Id">
+                                <img src="@item.ImagePath" alt="">
+                            </div>
+                            <div class="pizza-title">
+                                <p>@item.Name</p>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#pizzaModal-@item.Id">select</a>
+                            </div>
+                            @if (item.Desc is not null)
+                            {
+                                <div class="pizza-text">
+                                    <span>
+                                        @item.Desc
+                                    </span>
+                                </div>
+                            }
+                        </div>
+                        <!-- Modal for Pizza start -->
+                        <div class="modal fade pizza-modal" id="pizzaModal-@item.Id" tabindex="-1" aria-labelledby="pizzaModalLabel-@item.Id" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container">
+                                            <div class="modal-img">
+                                                <img src="@item.ImagePath" alt="">
+                                            </div>
+                                            <div class="modal-title">
+                                                <p>@item.Name</p>
+                                            </div>
+                                            <div class="modal-details">
+                                                <div class="modal-prd-count">
+                                                    <div class="pizza-minus modal-count-box">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </div>
+                                                    <span class="modal-count-value modal-count-box quantity">1</span>
+                                                    <div class="pizza-plus modal-count-box">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-prd-price">
+                                                    <span class="pizza-modal-price">@item.Price</span>
+                                                    <span>₼</span>
+                                                </div>
+                                            </div>
+                                            <input name="quantity" type="text" class="quantityInput">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="modal-basket">
+                                            <a href="" data-bs-toggle="modal" data-bs-target="#basketModal">
+                                                <i class="fas fa-shopping-basket">
+                                                    <span class="basket-count">2</span>
+                                                </i>
+                                                <div class="basket-price">
+                                                    <span>13.90</span>
+                                                    <span>₼</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <button class="modal-button" onclick="addToBasket('@item.Id')">add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal for Pizza finish -->
+                    }
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+@section Script{
+    <script src="~/assets/js/pizza.js"></script>
+
+    <script>
+        function addToBasket(id) {
+            const quantityInput = document.querySelector(`#pizzaModal-${id} .quantityInput`);
+            const quantity = quantityInput.value;
+
+            fetch(`/product/addbasket?id=${id}&quantity=${quantity}`, {
+                method: 'POST'
+            })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Done');
+                        const modal = document.querySelector(`#pizzaModal-${id}`);
+                        const bootstrapModal = bootstrap.Modal.getInstance(modal);
+                        bootstrapModal.hide();
+                    } else {
+                        console.error('Error:', response.statusText);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+
+
+
+  }

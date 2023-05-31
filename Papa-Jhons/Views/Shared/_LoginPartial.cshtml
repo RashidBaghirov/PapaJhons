@@ -1,0 +1,22 @@
+﻿@model LoginVm 
+<form asp-controller="account" asp-action="login">
+    <div class="form-imput-item">
+        <input asp-for=UserName  placeholder="Username" required>
+        <i class="fa fa-envelope"></i>
+    </div>
+    <div class="form-imput-item">
+        <input asp-for="Password" placeholder="Password" required>
+        <i class="fas fa-lock"></i>
+    </div>
+    <div class="form-remember-me">
+        <label for="">
+            <input asp-for="RememberMe" name="" id="">
+            Remember Me
+        </label>
+    </div>
+    <button type="submit">SIGN IN</button>
+    <a data-bs-toggle="modal" data-bs-target="#forgotModal" class="forgot-password">
+        Forgot your
+        password?
+    </a>
+</form>

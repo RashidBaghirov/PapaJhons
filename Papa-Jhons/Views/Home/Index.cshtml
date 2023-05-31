@@ -1,0 +1,80 @@
+﻿@if (TempData["Register"] != null)
+{
+    if ((bool)TempData["Register"] == true)
+    {
+        <input type="hidden" id="registerSuccess" />
+    }
+    else
+    {
+        <input type="hidden" id="registerError" />
+
+    }
+}
+@if (TempData["Login"] != null)
+{
+    if ((bool)TempData["Login"] == true)
+    {
+        <input type="hidden" id="loginSuccess" />
+    }
+    else
+    {
+        <input type="hidden" id="loginError" />
+
+    }
+}
+@model List<Slider>
+
+<section class="slider">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    @foreach (var item in Model)
+                    {
+                        <div class="carousel-item @(item.Order == 1 ? "active" : "")">
+                            <a href="">
+                                <img src="./assets/images/@item.ImagePath" class="d-block w-100" alt="...">
+                            </a>
+                        </div>
+                    }
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev" onclick="PrevSlide()">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next" onclick="NextSlide()">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+@section Script{
+
+    <script>
+        $(document).ready(function () {
+            if ($("#registerSuccess").length) {
+                toastr["success"]("Succested", "Hello!Check Your Email")
+            }
+            else if ($("#registerError").length) {
+                toastr["error"]("SomeThink went wrong", "Try again...")
+            }
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            if ($("#loginSuccess").length) {
+                toastr["success"]("Welcome back!", "Hello")
+            }
+            else if ($("#loginError").length) {
+                toastr["error"]("Username or password Incorrect!", "Sorry...")
+            }
+        })
+    </script>
+}

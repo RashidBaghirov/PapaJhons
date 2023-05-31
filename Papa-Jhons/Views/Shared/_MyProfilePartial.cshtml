@@ -1,0 +1,24 @@
+﻿@model ProfileVM
+<form asp-controller="account" asp-action="details" method="post">
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <p class="profile-titles">Personal Information</p>
+            <label asp-for="UserName">Username</label>
+            <input asp-for="UserName" value="@Model.UserName">
+            <label asp-for="Email">Email</label>
+            <input asp-for="Email"  value="@Model.Email" readonly>
+        </div>
+
+        <div class="col-12 col-lg-6">
+            <p class="profile-titles">Change Password</p>
+            <label asp-for="CurrentPassword">Current Password</label>
+            <input asp-for="CurrentPassword" id="">
+            <label asp-for="NewPassword">New Password</label>
+            <input asp-for ="NewPassword"  id="">
+            <label asp-for="CurrentPassword">Enter a new password again</label>
+            <input asp-for ="CurrentPassword" id="">
+
+        </div>
+    </div>
+    <button type="submit">Save All Changes</button>
+</form>

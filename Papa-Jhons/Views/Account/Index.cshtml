@@ -1,0 +1,246 @@
+﻿@model ProfileVM
+
+<section class="account-section">
+    <div class="container-fluid px-4 px-sm-5">
+        <h1>account</h1>
+
+        <ul class="nav nav-pills mb-5" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#pills-all"
+                        type="button" role="tab" aria-controls="pills-all" aria-selected="true">
+                    Profile
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-chicken-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-chicken" type="button" role="tab" aria-controls="pills-chicken"
+                        aria-selected="false">
+                    Order History
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
+                @await Html.PartialAsync("_MyProfilePartial",Model)
+            </div>
+
+            <div class="tab-pane fade" id="pills-chicken" role="tabpanel" aria-labelledby="pills-chicken-tab">
+                <div class="row">
+                    <div class="col-12 order-table">
+                        <table class="table table-bordered text-center align-middle">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Details</th>
+                                    <th scope="col">Total Count</th>
+                                    <th scope="col">Total Amount</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-bs-toggle="collapse" data-bs-target="#collapseExample1"
+                                    aria-expanded="false" aria-controls="collapseExample1">
+                                    <th scope="row">1</th>
+                                    <td><i class="fas fa-clipboard-list table-icon"></i></td>
+                                    <td>3</td>
+                                    <td class="table-price">18.80 ₼</td>
+                                    <td>26.11.2021</td>
+                                    <td>
+                                        <h5><span class="badge bg-success">Accepted</span></h5>
+                                    </td>
+
+                                <tr>
+                                    <td colspan="12">
+                                        <div class="collapse" id="collapseExample1">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">Pizza Image</th>
+                                                        <th scope="col">Pizza Name</th>
+                                                        <th scope="col">Pizza Size</th>
+                                                        <th scope="col">Pizza Price</th>
+                                                        <th scope="col">Count</th>
+                                                        <th scope="col">Total Price</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody style="border-top-width:1px;"
+                                                       class="text-center align-middle">
+
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td class="table-image">
+                                                            <img src="./assets/images/order-1.png" alt="">
+                                                        </td>
+                                                        <td>Grill Chicken Parmesan</td>
+                                                        <td>Mini pizza, 15 cm</td>
+                                                        <td class="table-price">4.90 ₼</td>
+                                                        <td>2</td>
+                                                        <td class="table-price">9.80 ₼</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td class="table-image">
+                                                            <img src="./assets/images/order-2.png" alt="">
+                                                        </td>
+                                                        <td>Spicy Garden Special</td>
+                                                        <td>Small, 15 cm</td>
+                                                        <td class="table-price">9.00 ₼</td>
+                                                        <td>1</td>
+                                                        <td class="table-price">9.00 ₼</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tr>
+
+                                <tr data-bs-toggle="collapse" data-bs-target="#collapseExample2"
+                                    aria-expanded="false" aria-controls="collapseExample2">
+                                    <th scope="row">2</th>
+                                    <td><i class="fas fa-clipboard-list table-icon"></i></td>
+                                    <td>1</td>
+                                    <td class="table-price">13.00 ₼</td>
+                                    <td>20.10.2021</td>
+                                    <td>
+                                        <h5><span class="badge bg-success">Accepted</span></h5>
+                                    </td>
+
+                                <tr>
+                                    <td colspan="12">
+                                        <div class="collapse" id="collapseExample2">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">Pizza Image</th>
+                                                        <th scope="col">Pizza Name</th>
+                                                        <th scope="col">Pizza Size</th>
+                                                        <th scope="col">Pizza Price</th>
+                                                        <th scope="col">Count</th>
+                                                        <th scope="col">Total Price</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody style="border-top-width:1px;"
+                                                       class="text-center align-middle">
+
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td class="table-image">
+                                                            <img src="./assets/images/order-3.png" alt="">
+                                                        </td>
+                                                        <td>Acılı Vegetarian</td>
+                                                        <td>Orta, 30 cm</td>
+                                                        <td class="table-price">13.00 ₼</td>
+                                                        <td>1</td>
+                                                        <td class="table-price">13.00 ₼</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tr>
+
+
+
+
+                            </tbody>
+                        </table>
+
+
+
+
+
+
+
+
+
+                        <!-- <table class="table table-bordered">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Details</th>
+                                    <th>Total count</th>
+                                    <th>Total Amount</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="text-center align-middle">
+                                <tr data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                                    aria-expanded="false" aria-controls="collapseExample">
+                                    <td>1</td>
+                                    <td><i class="fas fa-clipboard-list"></i></td>
+                                    <td>3</td>
+                                    <td class="table-price">18.80 ₼</td>
+                                    <td>26.11.2021</td>
+                                    <td>
+                                        <h5><span class="badge bg-success">Accepted</span></h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="12">
+                                        <div class="collapse" id="collapseExample">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr class="info">
+                                                        <th>#</th>
+                                                        <th>Pizza Image</th>
+                                                        <th>Pizza Name</th>
+                                                        <th>Pizza Size</th>
+                                                        <th>Count</th>
+                                                        <th>Price</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody style="border-top-width:1px;"
+                                                    class="text-center align-middle">
+
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>
+                                                            <img src="./assets/images/order-1.png" alt="">
+                                                        </td>
+                                                        <td>Grill Chicken Parmesan</td>
+                                                        <td>Mini pizza, 15 cm</td>
+                                                        <td>2</td>
+                                                        <td class="table-price">9.80 ₼</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>
+                                                            <img src="./assets/images/order-2.png" alt="">
+                                                        </td>
+                                                        <td>Spicy Garden Special</td>
+                                                        <td>Small, 15 cm</td>
+                                                        <td>1</td>
+                                                        <td class="table-price">9.00 ₼</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>

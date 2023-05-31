@@ -1,0 +1,19 @@
+﻿@model List<Offers>
+
+<section class="offers-section">
+    <div class="container-fluid px-3 px-sm-5">
+        <div class="row">
+            <h1>offers</h1>
+            @foreach (var item in Model)
+            {
+                <div class="col-6 col-sm-4 col-md-3 offers-box">
+                    <a href="" class="offers-img">
+                        <img src="./assets/images/@item.ImagePath" alt="">
+                    </a>
+                </div>
+            }
+       
+
+        </div>
+    </div>
+</section>
