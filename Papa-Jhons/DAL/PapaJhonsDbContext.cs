@@ -18,6 +18,10 @@ namespace Papa_Jhons.DAL
         public DbSet<Product> Products { get; set; }
         public DbSet<PizzaCategory> PizzaCategory { get; set; }
         public DbSet<BasketItem> BasketItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<ContactUs> Contact { get; set; }
+
 
 
 

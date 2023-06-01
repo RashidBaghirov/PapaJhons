@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using NuGet.ContentModel;
 using Papa_Jhons.DAL;
 using Papa_Jhons.Entities;
 using Papa_Jhons.Services;
@@ -15,12 +16,14 @@ namespace Papa_Jhons.Controllers
         private readonly PapaJhonsDbContext _context;
         private readonly ProductService _productService;
         private readonly UserManager<User> _userManager;
+        private readonly LayoutService _layoutService;
 
-        public ProductController(PapaJhonsDbContext context, ProductService productService, UserManager<User> userManager)
+        public ProductController(PapaJhonsDbContext context, ProductService productService, UserManager<User> userManager, LayoutService layoutService)
         {
             _context = context;
             _productService = productService;
             _userManager = userManager;
+            _layoutService = layoutService;
         }
         public IActionResult PizzaView(int id)
         {
@@ -62,16 +65,6 @@ namespace Papa_Jhons.Controllers
             return View(products);
         }
 
-        public IActionResult Index(int id)
-        {
-            List<Product> products = _productService.GetAllProducts().Where(x => x.CategoryId == id).ToList();
-            ViewBag.Category = _context.Categories.FirstOrDefault(x => x.Id == id);
-            return View(products);
-        }
-
-
-
-
         public async Task<IActionResult> AddBasket(int id, int quantity)
         {
 
@@ -98,8 +91,24 @@ namespace Papa_Jhons.Controllers
                 _context.SaveChanges();
             }
 
-            return RedirectToAction("Index", "Home");
+            return Redirect(Request.Headers["Referer"].ToString());
         }
+
+        [HttpGet]
+        public IActionResult GetBasketData()
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return NotFound();
+            }
+
+            BasketVm basketData = _layoutService.GetBaskets();
+
+            var data = new { count = basketData.BasketItems.Count, totalPrice = basketData.TotalPrice };
+            return Json(data);
+        }
+
+
 
 
         public async Task<IActionResult> RemoveBasketItem(int id)
@@ -112,19 +121,13 @@ namespace Papa_Jhons.Controllers
                 BasketItem basketItem = _context.BasketItems.FirstOrDefault(b => b.ProductId == product.Id && b.UserId == user.Id);
                 if (basketItem != null)
                 {
-                    if (basketItem.Count > 1)
-                    {
-                        basketItem.Count--;
-                    }
-                    else
-                    {
-                        _context.BasketItems.Remove(basketItem);
-                    }
+
+                    _context.BasketItems.Remove(basketItem);
                     _context.SaveChanges();
                 }
             }
 
-            return RedirectToAction("Index", "Home");
+            return Redirect(Request.Headers["Referer"].ToString());
         }
 
 

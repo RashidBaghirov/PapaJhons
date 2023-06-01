@@ -1,4 +1,7 @@
-﻿@if (TempData["Register"] != null)
+﻿@model List<Slider>
+
+
+@if (TempData["Register"] != null)
 {
     if ((bool)TempData["Register"] == true)
     {
@@ -22,7 +25,28 @@
 
     }
 }
-@model List<Slider>
+@if (TempData["ForgotPassword"] != null)
+{
+    if ((bool)TempData["ForgotPassword"] == true)
+    {
+        <input type="hidden" id="forgotSuccess" />
+    }
+    else
+    {
+        <input type="hidden" id="forgotError" />
+    }
+}
+@if (TempData["Security"] != null)
+{
+    if ((bool)TempData["Security"] == true)
+    {
+        <input type="hidden" id="securitySuccess" />
+    }
+    else
+    {
+        <input type="hidden" id="securityError" />
+    }
+}
 
 <section class="slider">
     <div class="container-fluid">
@@ -77,4 +101,25 @@
             }
         })
     </script>
+    <script>
+        $(document).ready(function () {
+            if ($("#forgotSuccess").length) {
+                toastr["success"]("Successful Operation!", "Hello. Please check your email")
+            }
+            else if ($("#forgotError").length) {
+                toastr["error"]("An Error Occurred!", "Sorry...")
+            }
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            if ($("#securitySuccess").length) {
+                toastr["success"]("Successful Operation!", "Hello, Your username or password has been changed. Please log in again.")
+            }
+            else if ($("#securityError").length) {
+                toastr["error"]("An Error Occurred!", "Sorry...")
+            }
+        })
+    </script>
+
 }

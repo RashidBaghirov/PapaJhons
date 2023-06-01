@@ -1,0 +1,115 @@
+﻿@using Papa_Jhons.ViewModel;
+@inject Papa_Jhons.Services.LayoutService layoutService
+@{
+    BasketVm basket = layoutService.GetBaskets();
+    List<Product> products = layoutService.GetProducts(); 
+}
+@model OrderVm
+
+<section class="checkout-section">
+    <div class="container">
+        <h1>checkout</h1>
+        <div class="row justify-content-lg-between justify-content-center">
+            <div class=" checkout-left">
+                <h4>SHIPPING DETAILS</h4>
+                <form asp-action="Checkout" id="checkout-form">
+                    <div class="row">
+                        <div class="col-6 user-form-item">
+                            <label for="">
+                                Fullname
+                                <span>*</span>
+                            </label>
+                            <input asp-for="Fullname"  placeholder="Fullname">
+                        </div>
+                        <div class="col-6 user-form-item">
+                            <label for="">
+                                Username
+                                <span>*</span>
+                            </label>
+                            <input asp-for="Username" id="" placeholder="Usurname">
+                        </div>
+                        <div class="col-6 user-form-item">
+                            <label for="">
+                                Email
+                                <span>*</span>
+                            </label>
+                            <input asp-for="Email" id="" placeholder="Email">
+                        </div>
+                        <div class="col-6 user-form-item">
+                            <label for="">
+                                Phone Number
+                                <span>*</span>
+                            </label>
+                            <input asp-for="Number"   id="" placeholder="Phone number" required maxlength="14">
+                        </div>
+                        <div class="col-6 user-form-item">
+                            <label for="">
+                                City
+                                <span>*</span>
+                            </label>
+                            <input asp-for="City" id="" placeholder="City" required>
+                        </div>
+                        <div class="col-6 user-form-item">
+                            <label for="">
+                                Adress
+                                <span>*</span>
+                            </label>
+                            <input asp-for="Address"  id="" placeholder="Adress" required>
+                        </div>
+
+                    </div>
+                    <div class="order-notes user-form-item">
+                        <label for="">Order Notes</label>
+                        <textarea  asp-for="Message" id="" cols="30" rows="10"
+                                  placeholder="Notes about your order, e.g. special notes for delivery." required></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class=" checkout-right">
+                <h4>YOUR ORDER</h4>
+                <ul>
+                  @foreach (var item in basket.BasketItems)
+                    {
+                        Product product = products.FirstOrDefault(x => x.Id == item.Product.Id);
+                        <li>
+                            <div class="product-image">
+                                <img src="@product.ImagePath"
+                                     alt="">
+                            </div>
+                            <div class="product-name">
+                                <p>@product.Name</p>
+                            </div>
+                            <div class="product-count">@item.Count</div>
+                            <div class="product-price">
+                                <span>@product.Price</span>
+                            </div>
+                        </li>
+                    }
+
+                  
+
+
+                </ul>
+
+                <div class="checkout-footer">
+                    <button type="submit" form="checkout-form">place order</button>
+                    <div class="line"></div>
+                    <div class="order-details">
+                        <div class="order-detail-amount">
+                            <p>Subtotal:</p>
+                            <span class="product-price">@basket.TotalPrice ₼</span>
+                        </div>
+                        <div class="order-detail-amount">
+                            <p>Total:</p>
+                            <span class="product-price">@basket.TotalPrice ₼</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>

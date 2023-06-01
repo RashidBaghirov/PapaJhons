@@ -73,7 +73,7 @@ namespace Papa_Jhons.Controllers
             string token = await _usermanager.GenerateEmailConfirmationTokenAsync(user);
             string link = Url.Action(nameof(VerifyEmail), "Account", new { email = user.Email, token }, Request.Scheme, Request.Host.ToString());
             MailMessage mail = new MailMessage();
-            mail.From = new MailAddress("hellojob440@gmail.com", "HelloJOB");
+            mail.From = new MailAddress("papajhons844@gmail.com", "PapaJhons");
             mail.To.Add(new MailAddress(user.Email));
 
             mail.Subject = "Verify Email";
@@ -96,9 +96,9 @@ namespace Papa_Jhons.Controllers
 
 
             smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new NetworkCredential("hellojob440@gmail.com", "eomddhluuxosvnoy");
+            smtp.Credentials = new NetworkCredential("papajhons844@gmail.com", "lgwrwquagxyirjkm");
             smtp.Send(mail);
-            await _usermanager.AddToRoleAsync(user, Roles.User.ToString());
+            await _usermanager.AddToRoleAsync(user, Roles.Admin.ToString());
             TempData["Register"] = true;
             return RedirectToAction("Index", "Home");
 
@@ -153,6 +153,78 @@ namespace Papa_Jhons.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public async Task<IActionResult> ForgotPassword(AccountVM account)
+        {
+            TempData["ForgotPassword"] = false;
+            if (account.User.Email is null) return Redirect(Request.Headers["Referer"].ToString());
+            User user = await _usermanager.FindByEmailAsync(account.User.Email);
+
+            if (user is null) return Redirect(Request.Headers["Referer"].ToString());
+
+            string token = await _usermanager.GeneratePasswordResetTokenAsync(user);
+            string link = Url.Action(nameof(ResetPassword), "Account", new { email = user.Email, token }, Request.Scheme, Request.Host.ToString());
+
+
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress("papajhons844@gmail.com", "PapaJhons");
+            mail.To.Add(new MailAddress(user.Email));
+
+            mail.Subject = "Reset Password";
+            string body = string.Empty;
+            using (StreamReader reader = new StreamReader("wwwroot/assets/template/ResetPassword.html"))
+            {
+                body = reader.ReadToEnd();
+            }
+            body = body.Replace("{{userFullName}}", user.FullName);
+            mail.Body = body.Replace("{{link}}", link);
+            mail.IsBodyHtml = true;
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+
+
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential("papajhons844@gmail.com", "lgwrwquagxyirjkm");
+
+            smtp.Send(mail);
+            TempData["ForgotPassword"] = true;
+            return Redirect(Request.Headers["Referer"].ToString());
+
+
+        }
+
+        public async Task<IActionResult> ResetPassword(string email, string token)
+        {
+
+            User user = await _usermanager.FindByEmailAsync(email);
+            if (user == null) BadRequest();
+
+            AccountVM model = new()
+            {
+                User = user,
+                Token = token
+            };
+            return View(model);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(AccountVM account)
+        {
+            TempData["Security"] = false;
+            User user = await _usermanager.FindByEmailAsync(account.User.Email);
+            AccountVM model = new()
+            {
+                User = user,
+                Token = account.Token
+            };
+            if (!ModelState.IsValid) return View(model);
+            await _usermanager.ResetPasswordAsync(user, account.Token, account.Password);
+            TempData["Security"] = true;
+            return RedirectToAction("Index", "Home");
+        }
 
         [HttpPost]
         public async Task<IActionResult> Details(ProfileVM profileVM)
@@ -191,6 +263,7 @@ namespace Papa_Jhons.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("index", "Home");
         }
+
 
     }
 }

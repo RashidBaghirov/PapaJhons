@@ -3,7 +3,7 @@
     User user = await layoutService.GetUserFullName();
     List<Category> categories = layoutService.AllCategory();
     BasketVm basket = layoutService.GetBaskets();
-    List<Product> products = layoutService.GetProducts(); ;
+    List<Product> products = layoutService.GetProducts(); 
 
 }
 
@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,8 @@
           rel="stylesheet">
     <link rel="icon" type="image/png" sizes="194x194"
           href="https://www.papajohns.az/img/content/favicon/favicon-194x194.png">
-    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link rel="stylesheet" href="~/assets/css/main.css">
 
     <title>Papa John's</title>
 </head>
@@ -42,14 +43,30 @@
                         <div class="basket">
                             <a href="" data-bs-toggle="modal" data-bs-target="#basketModal">
                                 <i class="fas fa-shopping-basket">
-                                    <span class="basket-count">2</span>
+                                    <span class="basket-count">@basket.BasketItems.Count</span>
                                 </i>
                                 <div class="basket-price">
-                                    <span>13.90</span>
+                                    <span></span>
                                     <span>₼</span>
                                 </div>
                             </a>
                         </div>
+                        <script>
+                          function updateBasketCountAndPrice() {
+                           fetch('/product/getbasketdata')
+                        .then(response => response.json())
+                         .then(data => {
+                       const basketCountElement = document.querySelector('.basket-count');
+                        const basketPriceElement = document.querySelector('.basket-price span');
+        
+                       basketCountElement.textContent = data.count;
+                        basketPriceElement.textContent = data.totalPrice;
+                      })
+                  .catch(error => {
+                        console.error('Error:', error);
+                 });
+}
+                        </script>
                         <div class="sign d-none d-md-block ">
                             @if (User.Identity.IsAuthenticated)
                             {
@@ -96,11 +113,18 @@
                                 <div class="offcanvas-body">
 
                                     <div class="sign mobile-menu-account">
-                                        <!-- <a href="">Ulvi Asadzade</a>
-                                        <a href="">/ Çıxış</a> -->
+                                              @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <a asp-controller="account" asp-action="index" class="option-text">@user.FullName</a>
+                                            <a asp-controller="account" asp-action="logout" class="option-text">Çıxış</a>
+                                        }
+                                        else
+                                        {
+                                            <a data-bs-toggle="modal" data-bs-target="#loginModal">Sign In</a>
+                                            <a data-bs-toggle="modal" data-bs-target="#registerModal">/ Sign Up</a>
+                                        }
 
-                                        <a data-bs-toggle="modal" data-bs-target="#loginModal">Sign In</a>
-                                        <a data-bs-toggle="modal" data-bs-target="#registerModal">/ Sign Up</a>
+                                     
                                     </div>
 
                                     <div class="sign  ">
@@ -160,7 +184,7 @@
                     <li><a asp-controller="offer" asp-action="index">Offers</a></li>
                     @foreach (var item in categories)
                     {
-                        <li><a asp-controller="Product" asp-action="@(item.Name=="Pizza" ? "PizzaView" : "Index")" asp-route-id="@item.Id">@item.Name</a></li>
+                        <li><a asp-controller="Product" asp-action="pizzaview" asp-route-id="@item.Id">@item.Name</a></li>
                     }
                 </ul>
             </div>
@@ -176,11 +200,10 @@
             <div class="row">
                 <div class="col-lg-7 col-12">
                     <ul class="footer-list">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="#">Dough</a></li>
-                        <li><a href="#">Terms and Conditions</a></li>
+                        <li><a asp-controller="home" asp-action="aboutUs">About Us</a></li>
+                        <li><a asp-controller="home" asp-action="contactUs">Contact Us</a></li>
+                        <li><a asp-controller="home" asp-action="faq">FAQ</a></li>
+                        <li><a asp-controller="home" asp-action="Rules">Terms and Conditions</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-6 footer-img">
@@ -262,14 +285,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="">
-                        <div class="form-imput-item">
-                            <input type="email" placeholder="Email">
-                            <i class="fa fa-envelope"></i>
-                        </div>
-
-                        <button type="submit">SEND MY PASSWORD</button>
-                    </form>
+                 @await Html.PartialAsync("_ForgotPartial",new AccountVM())
                 </div>
                 <div class="modal-footer">
                     <p>Back to</p>
@@ -336,15 +352,15 @@
                     <div class="container">
                         <div class="row mt-4 mt-sm-0 position-relative">
                             <div class="col-12 col-sm-6 go-checkout">
-                                <a class="" href="~/checkout.html">CHECKOUT</a>
+                                <a class="" asp-controller="Order" asp-action="Checkout">CHECKOUT</a>
                             </div>
                             <div class="col-12 col-sm-6 go-shop">
-                                <a href="~/pizza.html">BACK TO SHOP</a>
+                                <a asp-controller="Product" asp-action="index" asp-route-id="2">BACK TO SHOP</a>
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="total-amount">
                                     <p>Total Amount:</p>
-                                    <span class="total-price">13.90</span>
+                                    <span class="total-price">@basket.TotalPrice</span>
                                     <span>₼</span>
                                 </div>
 
@@ -362,12 +378,12 @@
 
     <script src="https://code.jquery.com/jquery-3.6.1.js"
             integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="https://kit.fontawesome.com/b26885e958.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
     <script src="~/assets/js/index.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     @RenderSection("Script",false)
 
 </body>

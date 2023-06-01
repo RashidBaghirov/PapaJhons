@@ -5,16 +5,192 @@
       "PackagePath": "staticwebassets\\Papa-Jhons.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\css\\style.compressed.css",
-      "PackagePath": "staticwebassets\\assets\\css\\style.compressed.css"
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\css\\style.css",
-      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\css\\style.prefix.css",
-      "PackagePath": "staticwebassets\\assets\\css\\style.prefix.css"
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\bootstrap-5.3.0-alpha1-dist\\style.css",
+      "PackagePath": "staticwebassets\\assets\\bootstrap-5.3.0-alpha1-dist\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\css\\main.css",
+      "PackagePath": "staticwebassets\\assets\\css\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\css\\main.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\main.css.map"
     },
     {
       "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\1Bonaqua.png",
@@ -275,74 +451,6 @@
     {
       "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\js\\snackes.js",
       "PackagePath": "staticwebassets\\assets\\js\\snackes.js"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\_base.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\_base.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\_components.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\_components.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\_typography.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\_typography.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\_variables.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\_variables.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\main.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\main.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_account.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_account.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_checkout.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_checkout.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_dessert.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_dessert.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_drinks.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_drinks.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_index.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_index.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_offers.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_offers.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_papadias.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_papadias.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_pasta.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_pasta.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_pizza.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_pizza.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_salads.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_salads.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_sauces.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_sauces.scss"
-    },
-    {
-      "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\scss\\pages\\_snackes.scss",
-      "PackagePath": "staticwebassets\\assets\\scss\\pages\\_snackes.scss"
     },
     {
       "Id": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\template\\AcceptedMail.html",

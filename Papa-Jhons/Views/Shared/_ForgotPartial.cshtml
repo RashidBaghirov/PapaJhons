@@ -1,0 +1,9 @@
+﻿@model AccountVM
+<form asp-controller="account" asp-action="ForgotPassword">
+    <div class="form-imput-item">
+        <input asp-for="User.Email" placeholder="Email">
+        <i class="fa fa-envelope"></i>
+    </div>
+
+    <button type="submit">SEND MY PASSWORD</button>
+</form>
