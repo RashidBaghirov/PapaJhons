@@ -1,7 +1,9 @@
 ﻿@model List<Product>
+@inject Papa_Jhons.Services.LayoutService layoutService
 @{
     Category category = ViewBag.Category;
     List<PizzaCategory> pizzaCategories = ViewBag.PizzaCategory;
+    BasketVm basket = layoutService.GetBaskets();
 }
 
 <section class="pizza-section">
@@ -52,51 +54,53 @@
                         <!-- Modal for Pizza start -->
                         <div class="modal fade pizza-modal" id="pizzaModal-@item.Id" tabindex="-1" aria-labelledby="pizzaModalLabel-@item.Id" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="container">
-                                            <div class="modal-img">
-                                                <img src="@item.ImagePath" alt="">
-                                            </div>
-                                            <div class="modal-title">
-                                                <p>@item.Name</p>
-                                            </div>
-                                            <div class="modal-details">
-                                                <div class="modal-prd-count">
-                                                    <div class="pizza-minus modal-count-box">
-                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                <form asp-action="addbasket" asp-route-id="@item.Id">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="modal-img">
+                                                    <img src="@item.ImagePath" alt="">
+                                                </div>
+                                                <div class="modal-title">
+                                                    <p>@item.Name</p>
+                                                </div>
+                                                <div class="modal-details">
+                                                    <div class="modal-prd-count">
+                                                        <div class="pizza-minus modal-count-box">
+                                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                                        </div>
+                                                        <span class="modal-count-value modal-count-box quantity">1</span>
+                                                        <div class="pizza-plus modal-count-box">
+                                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                                        </div>
                                                     </div>
-                                                    <span class="modal-count-value modal-count-box quantity">1</span>
-                                                    <div class="pizza-plus modal-count-box">
-                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    <div class="modal-prd-price">
+                                                        <span class="pizza-modal-price">@item.Price</span>
+                                                        <span>₼</span>
                                                     </div>
                                                 </div>
-                                                <div class="modal-prd-price">
-                                                    <span class="pizza-modal-price">@item.Price</span>
-                                                    <span>₼</span>
-                                                </div>
+                                                <input name="quantity" type="hidden" class="quantityInput">
                                             </div>
-                                            <input name="quantity" type="text" class="quantityInput">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="modal-basket">
+                                                <a href="" data-bs-toggle="modal" data-bs-target="#basketModal">
+                                                    <i class="fas fa-shopping-basket">
+                                                        <span class="basket-count">@basket.BasketItems.Count</span>
+                                                    </i>
+                                                    <div class="basket-price">
+                                                        <span>@basket.TotalPrice</span>
+                                                        <span>₼</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <button class="modal-button" onclick="addToBasket('@item.Id')">add</button>
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <div class="modal-basket">
-                                            <a href="" data-bs-toggle="modal" data-bs-target="#basketModal">
-                                                <i class="fas fa-shopping-basket">
-                                                    <span class="basket-count">2</span>
-                                                </i>
-                                                <div class="basket-price">
-                                                    <span>13.90</span>
-                                                    <span>₼</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <button class="modal-button" onclick="addToBasket('@item.Id')">add</button>
-                                    </div>
-                                </div>
+                                    </form>
                             </div>
                         </div>
                         <!-- Modal for Pizza finish -->
@@ -113,32 +117,5 @@
 
 @section Script{
     <script src="~/assets/js/pizza.js"></script>
-
-    <script>
-        function addToBasket(id) {
-            const quantityInput = document.querySelector(`#pizzaModal-${id} .quantityInput`);
-            const quantity = quantityInput.value;
-
-            fetch(`/product/addbasket?id=${id}&quantity=${quantity}`, {
-                method: 'POST'
-            })
-                .then(response => {
-                    if (response.ok) {
-                        console.log('Done');
-                        const modal = document.querySelector(`#pizzaModal-${id}`);
-                        const bootstrapModal = bootstrap.Modal.getInstance(modal);
-                        bootstrapModal.hide();
-                        updateBasketCountAndPrice(); 
-                    } else {
-                        console.error('Error:', response.statusText);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-        }
-    </script>
-
-
 
   }

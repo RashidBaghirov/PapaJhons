@@ -46,27 +46,12 @@
                                     <span class="basket-count">@basket.BasketItems.Count</span>
                                 </i>
                                 <div class="basket-price">
-                                    <span></span>
+                                    <span>@basket.TotalPrice</span>
                                     <span>₼</span>
                                 </div>
                             </a>
                         </div>
-                        <script>
-                          function updateBasketCountAndPrice() {
-                           fetch('/product/getbasketdata')
-                        .then(response => response.json())
-                         .then(data => {
-                       const basketCountElement = document.querySelector('.basket-count');
-                        const basketPriceElement = document.querySelector('.basket-price span');
-        
-                       basketCountElement.textContent = data.count;
-                        basketPriceElement.textContent = data.totalPrice;
-                      })
-                  .catch(error => {
-                        console.error('Error:', error);
-                 });
-}
-                        </script>
+                   
                         <div class="sign d-none d-md-block ">
                             @if (User.Identity.IsAuthenticated)
                             {
@@ -135,40 +120,11 @@
                                             </div>
 
                                             <ul class="options mobile-menu-tab-body">
-                                                <li class="option">
-                                                    <a class="option-text"
-                                                       href="~/offers.html">OFFERS</a>
-                                                </li>
-                                                <li class="option">
-                                                    <a class="option-text"
-                                                       href="~/papadias.html">PAPADIAS</a>
-                                                </li>
-                                                <li class="option">
-                                                    <a class="option-text" href="~/pizza.html">PIZZA</a>
-                                                </li>
-                                                <li class="option">
-                                                    <a class="option-text"
-                                                       href="~/snackes.html">SNACKES</a>
-                                                </li>
-                                                <li class="option">
-                                                    <a class="option-text"
-                                                       href="~/salads.html">SALADS</a>
-                                                </li>
-                                                <li class="option">
-                                                    <a class="option-text" href="~/pasta.html">PASTA</a>
-                                                </li>
-                                                <li class="option">
-                                                    <a class="option-text"
-                                                       href="~/drinks.html">DRINKS</a>
-                                                </li>
-                                                <li class="option">
-                                                    <a class="option-text"
-                                                       href="~/dessert.html">DESSERT</a>
-                                                </li>
-                                                <li class="option">
-                                                    <a class="option-text"
-                                                       href="~/sauces.html">SAUCES</a>
-                                                </li>
+                                                <li><a asp-controller="offer" asp-action="index">Offers</a></li>
+                                                @foreach (var item in categories)
+                                                {
+                                                    <li><a asp-controller="Product" asp-action="pizzaview" asp-route-id="@item.Id">@item.Name</a></li>
+                                                }
                                             </ul>
                                         </div>
                                     </div>
@@ -307,7 +263,7 @@
                 <div class="modal-body">
                     <div class="container">
                         <div class="modal-basket-count">
-                            Items in your basket: <strong>2</strong>
+                            Items in your basket: <strong>@basket.BasketItems.Count</strong>
                         </div>
                         @foreach (var item in basket.BasketItems)
                         {

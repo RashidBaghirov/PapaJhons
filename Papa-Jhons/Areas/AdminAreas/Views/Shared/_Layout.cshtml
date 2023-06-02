@@ -2,306 +2,540 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Majestic Admin</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="~/admin/assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="~/admin/assets/vendors/base/vendor.bundle.base.css">
-    <!-- endinject -->
-    <!-- plugin css for this page -->
-    <link rel="stylesheet" href="~/admin/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="~/admin/assets/css/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
-    <link rel="shortcut icon"
-          type="image/x-icon"
-          href="~/assets/images/favicon.ico" />
+   <title>Quantum Able Bootstrap 4 Admin Dashboard Template</title>
+   <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="~/admin/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+     <script src="~/admin/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+     <![endif]-->
 
-    <!-- CSS
-    ============================================ -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+   <!-- Favicon icon -->
+   <link rel="shortcut icon" href="~/admin/assets/images/favicon.png" type="image/x-icon">
+   <link rel="icon" href="~/admin/assets/images/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css" />
+   <!-- Google font-->
+   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+
+   <!-- themify -->
+   <link rel="stylesheet" type="text/css" href="~/admin/assets/icon/themify-icons/themify-icons.css">
+
+   <!-- iconfont -->
+   <link rel="stylesheet" type="text/css" href="~/admin/assets/icon/icofont/css/icofont.css">
+
+   <!-- simple line icon -->
+   <link rel="stylesheet" type="text/css" href="~/admin/assets/icon/simple-line-icons/css/simple-line-icons.css">
+
+   <!-- Required Fremwork -->
+   <link rel="stylesheet" type="text/css" href="~/admin/assets/plugins/bootstrap/css/bootstrap.min.css">
+
+   <!-- Chartlist chart css -->
+   <link rel="stylesheet" href="~/admin/assets/plugins/chartist/dist/chartist.css" type="text/css" media="all">
+
+   <!-- Weather css -->
+   <link href="~/admin/assets/css/svg-weather.css" rel="stylesheet">
+
+
+   <!-- Style.css -->
+   <link rel="stylesheet" type="text/css" href="~/admin/assets/css/main.css">
+
+   <!-- Responsive.css-->
+   <link rel="stylesheet" type="text/css" href="~/admin/assets/css/responsive.css">
 
 </head>
-@RenderSection("Css",false)
-<body>
-    <div class="container-scroller">
-        <div class="row p-0 m-0 proBanner" id="proBanner">
-            <div class="col-md-12 p-0 m-0">
-                <div class="card-body card-body-padding d-flex align-items-center justify-content-between">
-                    <div class="ps-lg-1">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <p class="mb-0 font-weight-medium me-3 buy-now-text">Free 24/7 customer support, updates, and more with this template!</p>
-                            <a href="https://www.bootstrapdash.com/product/majestic-admin-pro/?utm_source=organic&utm_medium=banner&utm_campaign=buynow_demo" target="_blank" class="btn me-2 buy-now-btn border-0">Get Pro</a>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <a href="https://www.bootstrapdash.com/product/majestic-admin-pro/"><i class="mdi mdi-home me-3 text-white"></i></a>
-                        <button id="bannerClose" class="btn border-0 p-0">
-                            <i class="mdi mdi-close text-white me-0"></i>
-                        </button>
-                    </div>
-                </div>
+
+<body class="sidebar-mini fixed">
+   <div class="loader-bg">
+      <div class="loader-bar">
+      </div>
+   </div>
+   <div class="wrapper">
+      <!-- Navbar-->
+      <header class="main-header-top hidden-print">
+         <a href="index.html" class="logo"><img class="img-fluid able-logo" src="~/admin/assets/images/logo.png" alt="Theme-logo"></a>
+         <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
+            <!-- Navbar Right Menu-->
+            <div class="navbar-custom-menu f-right">
+               <ul class="top-nav">
+                  <li class="dropdown notification-menu">
+                     <a href="#!" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
+                        <i class="icon-bell"></i>
+                        <span class="badge badge-danger header-badge">9</span>
+                     </a>
+                     <ul class="dropdown-menu">
+                        <li class="not-head">You have <b class="text-primary">4</b> new notifications.</li>
+                        <li class="bell-notification">
+                           <a href="javascript:;" class="media">
+                              <span class="media-left media-icon">
+                    <img class="img-circle" src="~/admin/assets/images/avatar-1.png" alt="User Image">
+                  </span>
+                              <div class="media-body"><span class="block">Lisa sent you a mail</span><span class="text-muted block-time">2min ago</span></div>
+                           </a>
+                        </li>
+                        <li class="bell-notification">
+                           <a href="javascript:;" class="media">
+                              <span class="media-left media-icon">
+                    <img class="img-circle" src="~/admin/assets/images/avatar-2.png" alt="User Image">
+                  </span>
+                              <div class="media-body"><span class="block">Server Not Working</span><span class="text-muted block-time">20min ago</span></div>
+                           </a>
+                        </li>
+                        <li class="bell-notification">
+                           <a href="javascript:;" class="media"><span class="media-left media-icon">
+                    <img class="img-circle" src="~/admin/assets/images/avatar-3.png" alt="User Image">
+                  </span>
+                                    <div class="media-body"><span class="block">Transaction xyz complete</span><span class="text-muted block-time">3 hours ago</span></div></a>
+                        </li>
+                        <li class="not-footer">
+                           <a href="#!">See all notifications.</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <!-- chat dropdown -->
+                  <li class="pc-rheader-submenu ">
+                     <a href="#!" class="drop icon-circle displayChatbox">
+                        <i class="icon-bubbles"></i>
+                        <span class="badge badge-danger header-badge">5</span>
+                     </a>
+
+                  </li>
+                  <!-- window screen -->
+                  <li class="pc-rheader-submenu">
+                     <a href="#!" class="drop icon-circle" onclick="javascript:toggleFullScreen()">
+                        <i class="icon-size-fullscreen"></i>
+                     </a>
+
+                  </li>
+                  <!-- User Menu-->
+                  <li class="dropdown">
+                     <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
+                        <span><img class="img-circle " src="~/admin/assets/images/avatar-1.png" style="width:40px;" alt="User Image"></span>
+                        <span>John <b>Doe</b> <i class=" icofont icofont-simple-down"></i></span>
+
+                     </a>
+                     <ul class="dropdown-menu settings-menu">
+                        <li><a href="#!"><i class="icon-settings"></i> Settings</a></li>
+                        <li><a href="#"><i class="icon-user"></i> Profile</a></li>
+                        <li><a href="#"><i class="icon-envelope-open"></i> My Messages</a></li>
+                        <li class="p-0">
+                           <div class="dropdown-divider m-0"></div>
+                        </li>
+                        <li><a href="#"><i class="icon-lock"></i> Lock Screen</a></li>
+                        <li><a href="login1.html"><i class="icon-logout"></i> Logout</a></li>
+
+                     </ul>
+                  </li>
+               </ul>
+
             </div>
-        </div>
-        <!-- partial:partials/_navbar.html -->
-        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-            <div class="navbar-brand-wrapper d-flex justify-content-center">
-                <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-                    <a class="navbar-brand brand-logo" asp-area="AdminAreas" asp-controller="Products" asp-action="Index"><img style="height:80px;" src="~/admin/assets/images/logo.png" alt="logo" /></a>
-                    <a class="navbar-brand brand-logo-mini" href="index.html"><img src="~/admin/assets/images/logo-mini.svg" alt="logo" /></a>
-                    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-                        <span class="mdi mdi-sort-variant"></span>
-                    </button>
-                </div>
+         </nav>
+      </header>
+      <!-- Side-Nav-->
+      <aside class="main-sidebar hidden-print ">
+         <section class="sidebar" id="sidebar-scroll">
+            <!-- Sidebar Menu-->
+            <ul class="sidebar-menu">
+                <li class="nav-level">--- Navigation</li>
+                <li class="active treeview">
+                    <a class="waves-effect waves-dark" href="index.html">
+                        <i class="icon-speedometer"></i><span> Dashboard</span>
+                    </a>                
+                </li>
+                <li class="nav-level">--- Components</li>
+                <li class="treeview"><a class="waves-effect waves-dark" href="#!"><i class="icon-briefcase"></i><span> UI Elements</span><i class="icon-arrow-down"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a class="waves-effect waves-dark" href="accordion.html"><i class="icon-arrow-right"></i> Accordion</a></li>
+                        <li><a class="waves-effect waves-dark" href="button.html"><i class="icon-arrow-right"></i> Button</a></li>
+                        <li><a class="waves-effect waves-dark" href="label-badge.html"><i class="icon-arrow-right"></i> Label Badge</a></li>
+                        <li><a class="waves-effect waves-dark" href="bootstrap-ui.html"><i class="icon-arrow-right"></i> Grid system</a></li>
+                        <li><a class="waves-effect waves-dark" href="box-shadow.html"><i class="icon-arrow-right"></i> Box Shadow</a></li>
+                        <li><a class="waves-effect waves-dark" href="color.html"><i class="icon-arrow-right"></i> Color</a></li>
+                        <li><a class="waves-effect waves-dark" href="light-box.html"><i class="icon-arrow-right"></i> Light Box</a></li>
+                        <li><a class="waves-effect waves-dark" href="notification.html"><i class="icon-arrow-right"></i> Notification</a></li>
+                        <li><a class="waves-effect waves-dark" href="panels-wells.html"><i class="icon-arrow-right"></i> Panels-Wells</a></li>
+                        <li><a class="waves-effect waves-dark" href="tabs.html"><i class="icon-arrow-right"></i> Tabs</a></li>
+                        <li><a class="waves-effect waves-dark" href="tooltips.html"><i class="icon-arrow-right"></i> Tooltips</a></li>
+                        <li><a class="waves-effect waves-dark" href="typography.html"><i class="icon-arrow-right"></i> Typography</a></li>
+                    </ul>
+                </li>
+
+                <li class="treeview"><a class="waves-effect waves-dark" href="#!"><i class="icon-chart"></i><span> Charts &amp; Maps</span><span class="label label-success menu-caption">New</span><i class="icon-arrow-down"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a class="waves-effect waves-dark" href="float-chart.html"><i class="icon-arrow-right"></i> Float Charts</a></li>
+                        <li><a class="waves-effect waves-dark" href="morris-chart.html"><i class="icon-arrow-right"></i> Morris Charts</a></li>
+                    </ul>
+                </li>
+
+                <li class="treeview"><a class="waves-effect waves-dark" href="#!"><i class="icon-book-open"></i><span> Forms</span><i class="icon-arrow-down"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a class="waves-effect waves-dark" href="form-elements-bootstrap.html"><i class="icon-arrow-right"></i> Form Elements Bootstrap</a></li>
+                        
+                        <li><a class="waves-effect waves-dark" href="form-elements-advance.html"><i class="icon-arrow-right"></i> Form Elements Advance</a></li>
+                    </ul>
+                </li>
+                
+                <li class="treeview">
+                    <a class="waves-effect waves-dark" href="basic-table.html">
+                        <i class="icon-list"></i><span> Table</span>
+                    </a>                
+                </li>
+
+
+                <li class="nav-level">--- More</li>
+
+                <li class="treeview"><a class="waves-effect waves-dark" href="#!"><i class="icon-docs"></i><span>Pages</span><i class="icon-arrow-down"></i></a>
+                    <ul class="treeview-menu">
+                        <li class="treeview"><a href="#!"><i class="icon-arrow-right"></i><span> Authentication</span><i class="icon-arrow-down"></i></a>
+                            <ul class="treeview-menu">
+                                <li><a class="waves-effect waves-dark" href="register1.html" target="_blank"><i class="icon-arrow-right"></i> Register 1</a></li>
+                                
+                                <li><a class="waves-effect waves-dark" href="login1.html" target="_blank"><i class="icon-arrow-right"></i><span> Login 1</span></a></li>
+                                <li><a class="waves-effect waves-dark" href="forgot-password.html" target="_blank"><i class="icon-arrow-right"></i><span> Forgot Password</span></a></li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li><a class="waves-effect waves-dark" href="404.html" target="_blank"><i class="icon-arrow-right"></i> Error 404</a></li>
+                        <li><a class="waves-effect waves-dark" href="sample-page.html"><i class="icon-arrow-right"></i> Sample Page</a></li>
+                        
+                    </ul>
+                </li>
+
+
+                <li class="nav-level">--- Menu Level</li>
+
+                <li class="treeview"><a class="waves-effect waves-dark" href="#!"><i class="icofont icofont-company"></i><span>Menu Level 1</span><i class="icon-arrow-down"></i></a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a class="waves-effect waves-dark" href="#!">
+                                <i class="icon-arrow-right"></i>
+                                Level Two
+                            </a>
+                        </li>
+                        <li class="treeview">
+                            <a class="waves-effect waves-dark" href="#!">
+                                <i class="icon-arrow-right"></i>
+                                <span>Level Two</span>
+                                <i class="icon-arrow-down"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li>
+                                    <a class="waves-effect waves-dark" href="#!">
+                                        <i class="icon-arrow-right"></i>
+                                        Level Three
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect waves-dark" href="#!">
+                                        <i class="icon-arrow-right"></i>
+                                        <span>Level Three</span>
+                                        <i class="icon-arrow-down"></i>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a class="waves-effect waves-dark" href="#!">
+                                                <i class="icon-arrow-right"></i>
+                                                Level Four
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="waves-effect waves-dark" href="#!">
+                                                <i class="icon-arrow-right"></i>
+                                                Level Four
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+         </section>
+      </aside>
+      <!-- Sidebar chat start -->
+      <div id="sidebar" class="p-fixed header-users showChat">
+         <div class="had-container">
+            <div class="card card_main header-users-main">
+               <div class="card-content user-box">
+                  <div class="media friendlist-main">
+
+                     <h6>Friend List</h6>
+
+                  </div>
+                  <div class="main-friend-list">
+                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
+
+                        <a class="media-left" href="#!">
+                           <img class="media-object img-circle" src="~/admin/assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <div class="live-status bg-success"></div>
+                        </a>
+                        <div class="media-body">
+                           <div class="friend-header">Josephin Doe</div>
+                           <span>20min ago</span>
+                        </div>
+                     </div>
+                     <div class="media friendlist-box" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
+                        <a class="media-left" href="#!">
+                           <img class="media-object img-circle" src="~/admin/assets/images/avatar-2.png" alt="Generic placeholder image">
+                           <div class="live-status bg-success"></div>
+                        </a>
+                        <div class="media-body">
+                           <div class="friend-header">Alice</div>
+                           <span>1 hour ago</span>
+                        </div>
+                     </div>
+                     <div class="media friendlist-box" data-id="7" data-status="offline" data-username="Michael Scofield" data-toggle="tooltip" data-placement="left" title="Michael Scofield">
+                        <a class="media-left" href="#!">
+                           <img class="media-object img-circle" src="~/admin/assets/images/avatar-3.png" alt="Generic placeholder image">
+                           <div class="live-status bg-danger"></div>
+                        </a>
+                        <div class="media-body">
+                           <div class="friend-header">Michael Scofield</div>
+                           <span>3 hours ago</span>
+                        </div>
+                     </div>
+                     <div class="media friendlist-box" data-id="5" data-status="online" data-username="Irina Shayk" data-toggle="tooltip" data-placement="left" title="Irina Shayk">
+                        <a class="media-left" href="#!">
+                           <img class="media-object img-circle" src="~/admin/assets/images/avatar-4.png" alt="Generic placeholder image">
+                           <div class="live-status bg-success"></div>
+                        </a>
+                        <div class="media-body">
+                           <div class="friend-header">Irina Shayk</div>
+                           <span>1 day ago</span>
+                        </div>
+                     </div>
+                     <div class="media friendlist-box" data-id="6" data-status="offline" data-username="Sara Tancredi" data-toggle="tooltip" data-placement="left" title="Sara Tancredi">
+                        <a class="media-left" href="#!">
+                           <img class="media-object img-circle" src="~/admin/assets/images/avatar-5.png" alt="Generic placeholder image">
+                           <div class="live-status bg-danger"></div>
+                        </a>
+                        <div class="media-body">
+                           <div class="friend-header">Sara Tancredi</div>
+                           <span>2 days ago</span>
+                        </div>
+                     </div>
+                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
+                        <a class="media-left" href="#!">
+                           <img class="media-object img-circle" src="~/admin/assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <div class="live-status bg-success"></div>
+                        </a>
+                        <div class="media-body">
+                           <div class="friend-header">Josephin Doe</div>
+                           <span>20min ago</span>
+                        </div>
+                     </div>
+                     <div class="media friendlist-box" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
+                        <a class="media-left" href="#!">
+                           <img class="media-object img-circle" src="~/admin/assets/images/avatar-2.png" alt="Generic placeholder image">
+                           <div class="live-status bg-success"></div>
+                        </a>
+                        <div class="media-body">
+                           <div class="friend-header">Alice</div>
+                           <span>1 hour ago</span>
+                        </div>
+                     </div>
+                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
+
+                        <a class="media-left" href="#!">
+                           <img class="media-object img-circle" src="~/admin/assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <div class="live-status bg-success"></div>
+                        </a>
+                        <div class="media-body">
+                           <div class="friend-header">Josephin Doe</div>
+                           <span>20min ago</span>
+                        </div>
+                     </div>
+                     <div class="media friendlist-box" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
+                        <a class="media-left" href="#!">
+                           <img class="media-object img-circle" src="~/admin/assets/images/avatar-2.png" alt="Generic placeholder image">
+                           <div class="live-status bg-success"></div>
+                        </a>
+                        <div class="media-body">
+                           <div class="friend-header">Alice</div>
+                           <span>1 hour ago</span>
+                        </div>
+                     </div>
+                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
+
+                        <a class="media-left" href="#!">
+                           <img class="media-object img-circle" src="~/admin/assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <div class="live-status bg-success"></div>
+                        </a>
+                        <div class="media-body">
+                           <div class="friend-header">Josephin Doe</div>
+                           <span>20min ago</span>
+                        </div>
+                     </div>
+                     <div class="media friendlist-box" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
+                        <a class="media-left" href="#!">
+                           <img class="media-object img-circle" src="~/admin/assets/images/avatar-2.png" alt="Generic placeholder image">
+                           <div class="live-status bg-success"></div>
+                        </a>
+                        <div class="media-body">
+                           <div class="friend-header">Alice</div>
+                           <span>1 hour ago</span>
+                        </div>
+                     </div>
+                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
+
+                        <a class="media-left" href="#!">
+                           <img class="media-object img-circle" src="~/admin/assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <div class="live-status bg-success"></div>
+                        </a>
+                        <div class="media-body">
+                           <div class="friend-header">Josephin Doe</div>
+                           <span>20min ago</span>
+                        </div>
+                     </div>
+                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
+
+                        <a class="media-left" href="#!">
+                           <img class="media-object img-circle" src="~/admin/assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <div class="live-status bg-success"></div>
+                        </a>
+                        <div class="media-body">
+                           <div class="friend-header">Josephin Doe</div>
+                           <span>20min ago</span>
+                        </div>
+                     </div>
+                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
+
+                        <a class="media-left" href="#!">
+                           <img class="media-object img-circle" src="~/admin/assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <div class="live-status bg-success"></div>
+                        </a>
+                        <div class="media-body">
+                           <div class="friend-header">Josephin Doe</div>
+                           <span>20min ago</span>
+                        </div>
+                     </div>
+                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
+
+                        <a class="media-left" href="#!">
+                           <img class="media-object img-circle" src="~/admin/assets/images/avatar-1.png" alt="Generic placeholder image">
+                           <div class="live-status bg-success"></div>
+                        </a>
+                        <div class="media-body">
+                           <div class="friend-header">Josephin Doe</div>
+                           <span>20min ago</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-                <ul class="navbar-nav mr-lg-4 w-100">
-                    <li class="nav-item nav-search d-none d-lg-block w-100">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="search">
-                                    <i class="mdi mdi-magnify"></i>
-                                </span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
-                        </div>
-                    </li>
-                </ul>
-                <ul class="navbar-nav navbar-nav-right">
-                    <li class="nav-item dropdown me-1">
-                        <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-bs-toggle="dropdown">
-                            <i class="mdi mdi-message-text mx-0"></i>
-                            <span class="count"></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
-                            <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
-                            <a class="dropdown-item">
-                                <div class="item-thumbnail">
-                                    <img src="~/admin/assets/images/faces/face4.jpg" alt="image" class="profile-pic">
-                                </div>
-                                <div class="item-content flex-grow">
-                                    <h6 class="ellipsis font-weight-normal">
-                                        David Grey
-                                    </h6>
-                                    <p class="font-weight-light small-text text-muted mb-0">
-                                        The meeting is cancelled
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item">
-                                <div class="item-thumbnail">
-                                    <img src="~/admin/assets/images/faces/face2.jpg" alt="image" class="profile-pic">
-                                </div>
-                                <div class="item-content flex-grow">
-                                    <h6 class="ellipsis font-weight-normal">
-                                        Tim Cook
-                                    </h6>
-                                    <p class="font-weight-light small-text text-muted mb-0">
-                                        New product launch
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item">
-                                <div class="item-thumbnail">
-                                    <img src="~/admin/assets/images/faces/face3.jpg" alt="image" class="profile-pic">
-                                </div>
-                                <div class="item-content flex-grow">
-                                    <h6 class="ellipsis font-weight-normal">
-                                        Johnson
-                                    </h6>
-                                    <p class="font-weight-light small-text text-muted mb-0">
-                                        Upcoming board meeting
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown me-4">
-                        <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
-                            <i class="mdi mdi-bell mx-0"></i>
-                            <span class="count"></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
-                            <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                            <a class="dropdown-item">
-                                <div class="item-thumbnail">
-                                    <div class="item-icon bg-success">
-                                        <i class="mdi mdi-information mx-0"></i>
-                                    </div>
-                                </div>
-                                <div class="item-content">
-                                    <h6 class="font-weight-normal">Application Error</h6>
-                                    <p class="font-weight-light small-text mb-0 text-muted">
-                                        Just now
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item">
-                                <div class="item-thumbnail">
-                                    <div class="item-icon bg-warning">
-                                        <i class="mdi mdi-settings mx-0"></i>
-                                    </div>
-                                </div>
-                                <div class="item-content">
-                                    <h6 class="font-weight-normal">Settings</h6>
-                                    <p class="font-weight-light small-text mb-0 text-muted">
-                                        Private message
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item">
-                                <div class="item-thumbnail">
-                                    <div class="item-icon bg-info">
-                                        <i class="mdi mdi-account-box mx-0"></i>
-                                    </div>
-                                </div>
-                                <div class="item-content">
-                                    <h6 class="font-weight-normal">New user registration</h6>
-                                    <p class="font-weight-light small-text mb-0 text-muted">
-                                        2 days ago
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="nav-item nav-profile dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-                            <span class="nav-profile-name">@User.Identity.Name</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                            <a asp-area="" asp-controller="Account" asp-action="LogOut">
-                                <i class="mdi mdi-logout text-primary"></i>
-                                Logout
-                            </a>
-                            <a asp-area="" asp-controller="Home" asp-action="Index">
-                                <i class="mdi mdi-logout text-primary"></i>
-                                Page
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-                    <span class="mdi mdi-menu"></span>
+         </div>
+
+      </div>
+      <div class="showChat_inner">
+         <div class="media chat-inner-header">
+            <a class="back_chatBox">
+               <i class="icofont icofont-rounded-left"></i> Josephin Doe
+            </a>
+         </div>
+         <div class="media chat-messages">
+            <a class="media-left photo-table" href="#!">
+               <img class="media-object img-circle m-t-5" src="~/admin/assets/images/avatar-1.png" alt="Generic placeholder image">
+               <div class="live-status bg-success"></div>
+            </a>
+            <div class="media-body chat-menu-content">
+               <div class="">
+                  <p class="chat-cont">I'm just looking around. Will you tell me something about yourself?</p>
+                  <p class="chat-time">8:20 a.m.</p>
+               </div>
+            </div>
+         </div>
+         <div class="media chat-messages">
+            <div class="media-body chat-menu-reply">
+               <div class="">
+                  <p class="chat-cont">I'm just looking around. Will you tell me something about yourself?</p>
+                  <p class="chat-time">8:20 a.m.</p>
+               </div>
+            </div>
+            <div class="media-right photo-table">
+               <a href="#!">
+                  <img class="media-object img-circle m-t-5" src="~/admin/assets/images/avatar-2.png" alt="Generic placeholder image">
+                  <div class="live-status bg-success"></div>
+               </a>
+            </div>
+         </div>
+         <div class="media chat-reply-box">
+            <div class="md-input-wrapper">
+               <input type="text" class="md-form-control" id="inputEmail" name="inputEmail">
+               <label>Share your thoughts</label>
+               <span class="highlight"></span>
+               <span class="bar"></span> <button type="button" class="chat-send waves-effect waves-light">
+                     <i class="icofont icofont-location-arrow f-20 "></i>
+                 </button>
+
+               <button type="button" class="chat-send waves-effect waves-light">
+                    <i class="icofont icofont-location-arrow f-20 "></i>
                 </button>
             </div>
-        </nav>
-        <!-- partial -->
-        <div class="container-fluid page-body-wrapper">
-            <nav class="sidebar sidebar-offcanvas" id="sidebar">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="AdminAreas" asp-controller="Products" asp-action="Index">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                            <span class="menu-title">Products</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="AdminAreas" asp-controller="Color" asp-action="Index">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                            <span class="menu-title">Color</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="AdminAreas" asp-controller="Size" asp-action="Index">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                            <span class="menu-title">Size</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="AdminAreas" asp-controller="Collection" asp-action="Index">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                            <span class="menu-title">Collection</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="AdminAreas" asp-controller="GlobalTab" asp-action="Index">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                            <span class="menu-title">GlobalTab</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="AdminAreas" asp-controller="Instruction" asp-action="Index">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                            <span class="menu-title">Instruction</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="AdminAreas" asp-controller="Setting" asp-action="Index">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                            <span class="menu-title">Settings</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="AdminAreas" asp-controller="Category" asp-action="Index">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                            <span class="menu-title">Category</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="AdminAreas" asp-controller="Slider" asp-action="Index">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                            <span class="menu-title">Slider</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="AdminAreas" asp-controller="Tag" asp-action="Index">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                            <span class="menu-title">Tag</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="AdminAreas" asp-controller="Order" asp-action="Index">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                            <span class="menu-title">Order</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="main-panel">
-                @RenderBody()
-            </div>
 
-            <!-- partial -->
-        </div>
-        <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com </a>2021</span>
-                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Only the best <a href="https://www.bootstrapdash.com/" target="_blank"> Bootstrap dashboard  </a> templates</span>
-            </div>
-        </footer>
-        <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
-    </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="~/admin/assets/vendors/base/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <script src="~/admin/assets/vendors/chart.js/Chart.min.js"></script>
-    <script src="~/admin/assets/vendors/datatables.net/jquery.dataTables.js"></script>
-    <script src="~/admin/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
-    <!-- End plugin js for this page-->
-    <!-- inject:js -->
-    <script src="~/admin/assets/js/off-canvas.js"></script>
-    <script src="~/admin/assets/js/hoverable-collapse.js"></script>
-    <script src="~/admin/assets/js/template.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="~/admin/assets/js/dashboard.js"></script>
-    <script src="~/admin/assets/js/data-table.js"></script>
-    <script src="~/admin/assets/js/jquery.dataTables.js"></script>
-    <script src="~/admin/assets/js/dataTables.bootstrap4.js"></script>
-    <!-- End custom js for this page-->
+         </div>
+      </div>
+      <div class="content-wrapper">
+         <div class="container-fluid">
+           @RenderBody()
+         </div>
+  
+ 
+      </div>
+   </div>
+
+
+   
+
+   <script src="~/admin/assets/plugins/Jquery/dist/jquery.min.js"></script>
+   <script src="~/admin/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+   <script src="~/admin/assets/plugins/tether/dist/js/tether.min.js"></script>
+   <script src="~/admin/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+   <script src="~/admin/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+   <script src="~/admin/assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+
+   <script src="~/admin/assets/plugins/classie/classie.js"></script>
+
+   <script src="~/admin/assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+
+   <script src="~/admin/assets/plugins/jquery-sparkline/dist/jquery.sparkline.js"></script>
+
+   <script src="~/admin/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+   <script src="~/admin/assets/plugins/countdown/js/jquery.counterup.js"></script>
+
+   <script src="~/admin/assets/plugins/charts/echarts/js/echarts-all.js"></script>
+
+   <script src="~/admin/https://code.highcharts.com/highcharts.js"></script>
+   <script src="~/admin/https://code.highcharts.com/modules/exporting.js"></script>
+   <script src="~/admin/https://code.highcharts.com/highcharts-3d.js"></script>
+
+   <!-- custom js -->
+   <script type="text/javascript" src="~/admin/assets/js/main.min.js"></script>
+   <script type="text/javascript" src="~/admin/assets/pages/dashboard.js"></script>
+   <script type="text/javascript" src="~/admin/assets/pages/elements.js"></script>
+   <script src="~/admin/assets/js/menu.min.js"></script>
     @RenderSection("Scripts",false)
     @RenderSection("Script",false)
-    <script src="~/admin/assets/js/jquery.cookie.js" type="text/javascript"></script>
+<script>
+var $window = $(window);
+var nav = $('.fixed-button');
+$window.scroll(function(){
+    if ($window.scrollTop() >= 200) {
+       nav.addClass('active');
+    }
+    else {
+       nav.removeClass('active');
+    }
+});
+</script>
+
 </body>
 
 </html>
+

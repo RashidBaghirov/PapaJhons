@@ -98,7 +98,7 @@ namespace Papa_Jhons.Controllers
             smtp.UseDefaultCredentials = false;
             smtp.Credentials = new NetworkCredential("papajhons844@gmail.com", "lgwrwquagxyirjkm");
             smtp.Send(mail);
-            await _usermanager.AddToRoleAsync(user, Roles.Admin.ToString());
+            await _usermanager.AddToRoleAsync(user, Roles.User.ToString());
             TempData["Register"] = true;
             return RedirectToAction("Index", "Home");
 
@@ -220,7 +220,6 @@ namespace Papa_Jhons.Controllers
                 User = user,
                 Token = account.Token
             };
-            if (!ModelState.IsValid) return View(model);
             await _usermanager.ResetPasswordAsync(user, account.Token, account.Password);
             TempData["Security"] = true;
             return RedirectToAction("Index", "Home");

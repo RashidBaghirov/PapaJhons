@@ -1,60 +1,59 @@
-﻿//using BackEndProject.DAL;
-//using BackEndProject.Entities;
-//using BackEndProject.Utilities.Enum;
-//using Microsoft.AspNetCore.Authorization;
-//using Microsoft.AspNetCore.Mvc;
-//using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Papa_Jhons.DAL;
+using Papa_Jhons.Entities;
 
-//namespace BackEndProject.Areas.AdminAreas.Controllers
-//{
-//    [Area("AdminAreas")]
-//    [Authorize(Roles = "Admin,Moderator")]
-//    public class OrderController : Controller
-//    {
-//        private readonly ProductDbContext _context;
+namespace Papa_Jhons.Areas.AdminAreas.Controllers
+{
+    [Area("AdminAreas")]
+    public class OrderController : Controller
+    {
+        private readonly PapaJhonsDbContext _context;
 
-//        public OrderController(ProductDbContext context, IWebHostEnvironment env)
-//        {
-//            _context = context;
-//        }
-//        public IActionResult Index()
-//        {
-//            List<Order> orders = _context.Orders.ToList();
-//            return View(orders);
-//        }
+        public OrderController(PapaJhonsDbContext context)
+        {
+            _context = context;
+        }
+        public IActionResult Index()
+        {
+            List<Order> orders = _context.Orders.ToList();
+            return View(orders);
+        }
+        public IActionResult Edit(int id)
+        {
+            Order order = _context.Orders.Include(o => o.OrderItems).Include(o => o.User).FirstOrDefault(o => o.Id == id);
+            ViewBag.Products = _context.Products.ToList();
+            if (order == null) return NotFound();
 
-//        public IActionResult Edit(int id)
-//        {
-//            Order order = _context.Orders.Include(x => x.OrderItems).Include(p => p.Basket).ThenInclude(pt => pt.BasketItems).Include(p => p.Basket.BasketItems).ThenInclude(p => p.ProductSizeColor.Product).Include(p => p.Basket.BasketItems).ThenInclude(p => p.ProductSizeColor.Product.ProductImages).FirstOrDefault(x => x.Id == id);
-
-//            if (order is null) return NotFound();
-//            return View(order);
-//        }
+            return View(order);
+        }
+        public IActionResult Accept(int id)
+        {
 
 
-//        public IActionResult Accept(int id)
-//        {
-//            Order order = _context.Orders.Include(x => x.OrderItems).FirstOrDefault(x => x.Id == id);
+            Order order = _context.Orders.FirstOrDefault(o => o.Id == id);
+            if (order == null) return NotFound();
 
-//            if (order is null) return NotFound();
-//            order.Status = BackEndProject.Utilities.Enum.OrderStatus.Accepted;
-//            _context.SaveChanges();
+            order.Status = true;
 
-//            return RedirectToAction("index");
-//        }
+            _context.SaveChanges();
 
-//        public IActionResult Reject(int id)
-//        {
-//            Order order = _context.Orders.FirstOrDefault(x => x.Id == id);
+            return RedirectToAction("Index", "Order");
 
-//            if (order is null) return NotFound();
+        }
+        public IActionResult Reject(int id)
+        {
 
-//            order.Status = BackEndProject.Utilities.Enum.OrderStatus.Rejected;
 
-//            _context.SaveChanges();
+            Order order = _context.Orders.FirstOrDefault(o => o.Id == id);
+            if (order == null) return NotFound();
 
-//            return RedirectToAction("index");
-//        }
+            order.Status = false;
 
-//    }
-//}
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Order");
+
+        }
+    }
+}

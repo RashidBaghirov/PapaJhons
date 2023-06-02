@@ -1,68 +1,109 @@
-﻿@*@model IEnumerable<BackEndProject.Entities.Order>
+﻿@model List<Order>
+@{
+    ViewData["Title"] = "Index";
+}
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<h1>Index</h1>
+
 <table class="table">
     <thead>
         <tr>
+
             <th>
-                @Html.DisplayNameFor(model => model.FullName)
+                #
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                Fullname
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-        
-            <th>
-                @Html.DisplayNameFor(model => model.Note)
+                City
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CreatedAt)
+                Adress
+            </th>
+
+            <th>
+                Date
+            </th>
+
+            <th>
+                Number
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Status)
+                TotalPrice
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TotalPrice)
+                Message
             </th>
+            <th>
+                Status
+            </th>
+
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Note)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalPrice)
-            </td>
-            <td>
-                    <a asp-action="Accept" asp-route-id="@item.Id">Accepted</a> |
-                    <a asp-action="Reject" asp-route-id="@item.Id">Rejected</a> |
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+        @foreach (Order order in Model)
+        {
 
-            </td>
-        </tr>
-}
+            <tr>
+                <td>
+                    @order.Id
+                </td>
+                <td>
+                    @order.City
+                </td>
+                <td>
+                    @order.Adress
+                </td>
+
+         
+                <td>
+                    @order.Number
+                </td>
+                <td>
+                    $@order.TotalPrice
+                </td>
+                <td>
+                    @order.Message
+                </td>
+                <td>
+                    @order.Date.ToString("dd.MMMM.yyyy HH:mm")
+                </td>
+                @if (order.Status == null)
+                {
+                    <td>
+                        <button class="btn btn-warning">
+                            Pending
+                        </button>
+                    </td>
+                }
+                else if (order.Status == true)
+                {
+                    <td>
+                        <button class="btn btn-success">
+                            Accepted
+                        </button>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <button class="btn btn-danger">
+                            Rejected
+                        </button>
+                    </td>
+                }
+
+
+                <td>
+                    <a style="display:flex;justify-content:center;align-items:center" class="btn btn-warning" asp-controller="Order" asp-action="Edit" asp-route-id="@order.Id">Details</a>
+
+
+
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
-*@
+

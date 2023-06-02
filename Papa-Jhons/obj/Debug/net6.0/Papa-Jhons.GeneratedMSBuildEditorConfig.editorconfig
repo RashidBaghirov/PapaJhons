@@ -16,12 +16,76 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\resid\OneDrive\Desktop\PapaJhons\Papa_Jhons_Back\Papa-Jhons
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/Category/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xDYXRlZ29yeVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/Category/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xDYXRlZ29yeVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/Category/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xDYXRlZ29yeVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/Category/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xDYXRlZ29yeVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xDYXRlZ29yeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/Home/Statistics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xIb21lXFN0YXRpc3RpY3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/Order/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xPcmRlclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/Order/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xPcmRlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/PizzaCategory/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xQaXp6YUNhdGVnb3J5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/PizzaCategory/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xQaXp6YUNhdGVnb3J5XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/PizzaCategory/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xQaXp6YUNhdGVnb3J5XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/PizzaCategory/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xQaXp6YUNhdGVnb3J5XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/PizzaCategory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xQaXp6YUNhdGVnb3J5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/Products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xQcm9kdWN0c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/Products/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xQcm9kdWN0c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/Products/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xQcm9kdWN0c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/Products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xQcm9kdWN0c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xQcm9kdWN0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/Setting/Create.cshtml]

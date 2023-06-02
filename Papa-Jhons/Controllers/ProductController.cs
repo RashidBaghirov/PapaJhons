@@ -94,23 +94,6 @@ namespace Papa_Jhons.Controllers
             return Redirect(Request.Headers["Referer"].ToString());
         }
 
-        [HttpGet]
-        public IActionResult GetBasketData()
-        {
-            if (!User.Identity.IsAuthenticated)
-            {
-                return NotFound();
-            }
-
-            BasketVm basketData = _layoutService.GetBaskets();
-
-            var data = new { count = basketData.BasketItems.Count, totalPrice = basketData.TotalPrice };
-            return Json(data);
-        }
-
-
-
-
         public async Task<IActionResult> RemoveBasketItem(int id)
         {
             Product product = _context.Products.FirstOrDefault(p => p.Id == id);

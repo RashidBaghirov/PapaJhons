@@ -1,0 +1,58 @@
+﻿@model List<OrderItem>
+
+<h2>Sipariş İstatistikleri</h2>
+
+<canvas id="myChart" width="400" height="400"></canvas>
+
+@section scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var orderItems = @Html.Raw(Json.Serialize(Model));
+
+        function getOrderStatistics(orderItems) {
+            var statistics = {};
+
+            for (var i = 0; i < orderItems.length; i++) {
+                var productId = orderItems[i].ProductId;
+                var productName = orderItems[i].Product.Name;
+
+                if (statistics[productId]) {
+                    statistics[productId].count++;
+                } else {
+                    statistics[productId] = {
+                        count: 1,
+                        name: productName
+                    };
+                }
+            }
+
+            return statistics;
+        }
+
+        var orderStatistics = getOrderStatistics(orderItems);
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chartData = {
+            labels: Object.values(orderStatistics).map(stat => stat.name), 
+            datasets: [{
+                label: 'Sipariş İstatistikleri',
+                data: Object.values(orderStatistics).map(stat => stat.count), 
+                backgroundColor: 'rgba(75, 192, 192, 0.2)', 
+                borderColor: 'rgba(75, 192, 192, 1)', 
+                borderWidth: 1
+            }]
+        };
+        var chartOptions = {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        };
+        var myChart = new Chart(ctx, {
+            type: 'bar', 
+            data: chartData,
+            options: chartOptions
+        });
+    </script>
+}

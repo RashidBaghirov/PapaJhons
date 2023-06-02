@@ -5,6 +5,7 @@ using Papa_Jhons.Utilities.Extension;
 
 namespace Papa_Jhons.Areas.AdminAreas.Controllers
 {
+    [Area("AdminAreas")]
     public class OrdersController : Controller
     {
         private readonly PapaJhonsDbContext _context;
