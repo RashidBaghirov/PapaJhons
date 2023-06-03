@@ -3,7 +3,24 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="row">
+    <div class="main-header" style="margin-top: 0px;">
+        <h4>Orders</h4>
+        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+            <li class="breadcrumb-item">
+                <a asp-area="AdminAreas" asp-controller="Home" asp-action="Statistics">
+                    <i class="icofont icofont-home"></i>
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#!">Orders</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a asp-area="AdminAreas" asp-controller="Order" asp-action="Index">Order</a>
+            </li>
+        </ol>
+    </div>
+</div>
 
 <table class="table">
     <thead>
@@ -62,7 +79,7 @@
                     @order.Number
                 </td>
                 <td>
-                    $@order.TotalPrice
+                    <span>₼</span>@order.TotalPrice
                 </td>
                 <td>
                     @order.Message

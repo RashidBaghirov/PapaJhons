@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CFrqPJI8vw8jEyLenx6l5gLLKVxGIS6KHSYpVpe8SVM=",
+  "Hash": "dEof2YoEO+mNYUeH8uwR4gD2WQbQPDnCTIe/c7bTZzs=",
   "Source": "Papa-Jhons",
   "BasePath": "_content/Papa-Jhons",
   "Mode": "Default",
@@ -18273,40 +18273,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\pj_logo_web_new.png"
-    },
-    {
-      "Identity": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Products\\171827unnamed.jpg",
-      "SourceId": "Papa-Jhons",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\",
-      "BasePath": "_content/Papa-Jhons",
-      "RelativePath": "assets/images/Products/171827unnamed.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\Products\\171827unnamed.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\Products\\247maxresdefault.jpg",
-      "SourceId": "Papa-Jhons",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\",
-      "BasePath": "_content/Papa-Jhons",
-      "RelativePath": "assets/images/Products/247maxresdefault.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\Products\\247maxresdefault.jpg"
     },
     {
       "Identity": "C:\\Users\\resid\\OneDrive\\Desktop\\PapaJhons\\Papa_Jhons_Back\\Papa-Jhons\\wwwroot\\assets\\images\\slider-1.jpg",

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Papa_Jhons.DAL;
 using Papa_Jhons.Entities;
 using Papa_Jhons.Utilities.Extension;
@@ -7,6 +8,8 @@ using Papa_Jhons.Utilities.Extension;
 namespace BackEndProject.Areas.AdminAreas.Controllers
 {
     [Area("AdminAreas")]
+    [Authorize(Roles = "Admin,Moderator")]
+
     public class SettingController : Controller
     {
         private readonly PapaJhonsDbContext _context;
@@ -16,9 +19,27 @@ namespace BackEndProject.Areas.AdminAreas.Controllers
             _context = context;
             _env = env;
         }
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
-            IEnumerable<Setting> settings = _context.Settings.AsEnumerable();
+            ViewBag.TotalPage = Math.Ceiling((double)_context.Settings.Count() / 8);
+            ViewBag.CurrentPage = page;
+            IEnumerable<Setting> settings = _context.Settings.AsNoTracking().Skip((page - 1) * 8).Take(8).AsEnumerable();
+            return View(settings);
+        }
+
+
+
+        [HttpPost]
+        public IActionResult Index(string search, int page = 1)
+        {
+            ViewBag.TotalPage = Math.Ceiling((double)_context.Settings.Count() / 8);
+            ViewBag.CurrentPage = page;
+            IEnumerable<Setting> settings = _context.Settings.AsNoTracking().Skip((page - 1) * 8).Take(8).AsEnumerable();
+            if (!string.IsNullOrEmpty(search))
+            {
+                settings = settings.Where(x => x.Key.ToLower().StartsWith(search.ToLower().Substring(0, Math.Min(search.Length, 1)))).ToList();
+            }
+
             return View(settings);
         }
 
@@ -65,12 +86,12 @@ namespace BackEndProject.Areas.AdminAreas.Controllers
         {
             if (id <= 0)
             {
-                return NotFound();
+                return Redirect("~/Error/Error");
             }
             Setting setting = _context.Settings.FirstOrDefault(s => s.Id == id);
             if (setting is null)
             {
-                return BadRequest();
+                return Redirect("~/Error/Error");
             }
             return View(setting);
         }
@@ -78,8 +99,12 @@ namespace BackEndProject.Areas.AdminAreas.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(int id, Setting edited)
         {
-            if (id != edited.Id) return NotFound();
+            if (id != edited.Id) return Redirect("~/Error/Error");
             Setting setting = _context.Settings.FirstOrDefault(s => s.Id == id);
+            if (setting is null)
+            {
+                return Redirect("~/Error/Error");
+            }
             if (!ModelState.IsValid) return View(setting);
             _context.Entry<Setting>(setting).CurrentValues.SetValues(edited);
 
@@ -98,7 +123,7 @@ namespace BackEndProject.Areas.AdminAreas.Controllers
 
         public IActionResult Details(int id)
         {
-            if (id == 0) return NotFound();
+            if (id == 0) return Redirect("~/Error/Error");
             Setting? setting = _context.Settings.FirstOrDefault(c => c.Id == id);
             return setting is null ? BadRequest() : View(setting);
         }
@@ -107,18 +132,18 @@ namespace BackEndProject.Areas.AdminAreas.Controllers
 
         public IActionResult Delete(int id)
         {
-            if (id == 0) return NotFound();
+            if (id == 0) return Redirect("~/Error/Error");
             Setting? setting = _context.Settings.FirstOrDefault(c => c.Id == id);
-            if (setting is null) return NotFound();
+            if (setting is null) return Redirect("~/Error/Error");
             return View(setting);
         }
 
         [HttpPost]
         public IActionResult Delete(int id, Setting deleted)
         {
-            if (id != deleted.Id) return NotFound();
+            if (id != deleted.Id) return Redirect("~/Error/Error");
             Setting? setting = _context.Settings.FirstOrDefault(c => c.Id == id);
-            if (setting is null) return NotFound();
+            if (setting is null) return Redirect("~/Error/Error");
             _context.Settings.Remove(setting);
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));

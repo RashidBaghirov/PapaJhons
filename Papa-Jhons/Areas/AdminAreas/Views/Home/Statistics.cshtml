@@ -1,58 +1,110 @@
 ﻿@model List<OrderItem>
+@inject Papa_Jhons.Services.LayoutService layoutSercice
+@{
+    List<Product> products = layoutSercice.GetProducts();
+    List<Order> orders = layoutSercice.GetOrderItems();
 
-<h2>Sipariş İstatistikleri</h2>
-
-<canvas id="myChart" width="400" height="400"></canvas>
+}
+<div class="row">
+    <div class="main-header" style="margin-top: 0px;">
+        <h4>Statictics</h4>
+        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+            <li class="breadcrumb-item">
+                <a asp-area="AdminAreas" asp-controller="Home" asp-action="Statistics">
+                    <i class="icofont icofont-home"></i>
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#!"> Dashboard</a>
+            </li>
+           
+        </ol>
+    </div>
+</div>
+<div class="row dashboard-header">
+    <div class="col-lg-6 col-md-6">
+        <div class="card dashboard-product">
+            <span>Products</span>
+            <h2 class="dashboard-total-products">@orders.Where(x=>x.Status==true).Count()</h2>
+            <span class="label label-warning">Sales</span>AllTime
+            <div class="side-box">
+                <i class="ti-signal text-warning-color"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6">
+        <div class="card dashboard-product">
+            <span>Products</span>
+            <h2 class="dashboard-total-products">@products.Count</h2>
+            <span class="label label-primary">Creating</span>AllTime
+            <div class="side-box ">
+                <i class="ti-gift text-primary-color"></i>
+            </div>
+        </div>
+    </div>
+</div>
 
 @section scripts {
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script>
-        var orderItems = @Html.Raw(Json.Serialize(Model));
+        var categoryCtx = document.getElementById('categoryChart').getContext('2d');
+        var userCtx = document.getElementById('userChart').getContext('2d');
 
-        function getOrderStatistics(orderItems) {
-            var statistics = {};
+        var categoryLabels = @Html.Raw(Json.Serialize(ViewBag.CategoryLabels));
+        var categoryData = @Html.Raw(Json.Serialize(ViewBag.CategoryData));
 
-            for (var i = 0; i < orderItems.length; i++) {
-                var productId = orderItems[i].ProductId;
-                var productName = orderItems[i].Product.Name;
+        var userLabels = @Html.Raw(Json.Serialize(ViewBag.UserLabels));
+        var userData = @Html.Raw(Json.Serialize(ViewBag.UserData));
 
-                if (statistics[productId]) {
-                    statistics[productId].count++;
-                } else {
-                    statistics[productId] = {
-                        count: 1,
-                        name: productName
-                    };
+        var categoryChart = new Chart(categoryCtx, {
+            type: 'bar',
+            data: {
+                labels: categoryLabels,
+                datasets: [{
+                    label: 'Product Count',
+                    data: categoryData,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
+        });
 
-            return statistics;
-        }
-
-        var orderStatistics = getOrderStatistics(orderItems);
-
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var chartData = {
-            labels: Object.values(orderStatistics).map(stat => stat.name), 
-            datasets: [{
-                label: 'Sipariş İstatistikleri',
-                data: Object.values(orderStatistics).map(stat => stat.count), 
-                backgroundColor: 'rgba(75, 192, 192, 0.2)', 
-                borderColor: 'rgba(75, 192, 192, 1)', 
-                borderWidth: 1
-            }]
-        };
-        var chartOptions = {
-            scales: {
-                y: {
-                    beginAtZero: true
+        var userChart = new Chart(userCtx, {
+            type: 'bar',
+            data: {
+                labels: userLabels,
+                datasets: [{
+                    label: 'Order Count',
+                    data: userData,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        };
-        var myChart = new Chart(ctx, {
-            type: 'bar', 
-            data: chartData,
-            options: chartOptions
         });
     </script>
 }
+
+<h1>Category Statistics</h1>
+<canvas id="categoryChart" width="400" height="200"></canvas>
+
+<hr />
+
+<h1>User Statistics</h1>
+<canvas id="userChart" width="400" height="200"></canvas>

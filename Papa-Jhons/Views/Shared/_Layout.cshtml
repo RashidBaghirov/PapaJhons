@@ -1,4 +1,5 @@
-﻿@inject Papa_Jhons.Services.LayoutService layoutService
+﻿@using Papa_Jhons.Utilities;
+@inject Papa_Jhons.Services.LayoutService layoutService
 @{
     User user = await layoutService.GetUserFullName();
     List<Category> categories = layoutService.AllCategory();
@@ -71,7 +72,14 @@
                                         <i class="fa fa-sign-out" aria-hidden="true"></i>
                                             <a asp-controller="account" asp-action="logout" class="option-text">Çıxış</a>
                                     </li>
+                                        @if (User.IsInRole(Roles.Admin.ToString()))
+                                        {
+                                            <li class="option">
+                                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                                <a asp-area="AdminAreas" asp-controller="Home" asp-action="Statistics" class="option-text">AdminPanel</a>
+                                            </li>
 
+                                        }
                                 </ul>
                                 </div>
                             }

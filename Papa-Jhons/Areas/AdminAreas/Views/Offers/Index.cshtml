@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Papa_Jhons.Entities.Offers>
+<div class="row">
+    <div class="main-header" style="margin-top: 0px;">
+        <h4>Offers</h4>
+        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+            <li class="breadcrumb-item">
+                <a asp-area="AdminAreas" asp-controller="Home" asp-action="Statistics">
+                    <i class="icofont icofont-home"></i>
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#!">Entities</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a asp-area="AdminAreas" asp-controller="Offers" asp-action="Index">Offers</a>
+            </li>
+        </ol>
+    </div>
+</div>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagePath)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    <div class="image" style="width:150px;height:150px;">
+                        <img style="width:100%;object-fit:contain" src="~/assets/images/@item.ImagePath" />
+                    </div>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

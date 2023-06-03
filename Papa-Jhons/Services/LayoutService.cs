@@ -72,5 +72,19 @@ namespace Papa_Jhons.Services
             List<Product> products = _productService.GetAllProducts().ToList();
             return products;
         }
+
+
+        public List<Order> GetOrderItems()
+        {
+            List<Order> order = _context.Orders.Include(o => o.OrderItems).Include(o => o.User).ToList();
+            return order;
+        }
+
+
+        public List<ContactUs> GetContactUs()
+        {
+            List<ContactUs> contacts = _context.Contact.ToList();
+            return contacts;
+        }
     }
 }

@@ -50,6 +50,7 @@ namespace Papa_Jhons.Controllers
                 PhoneNumber = phoneNumber,
                 Comment = comment,
                 SendTime = DateTime.Now,
+                IsReply = false
             };
 
             _context.Contact.Add(contactUs);

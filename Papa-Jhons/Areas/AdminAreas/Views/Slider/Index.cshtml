@@ -1,9 +1,26 @@
 ﻿@model IEnumerable<Papa_Jhons.Entities.Slider>
 
+<div class="row">
+    <div class="main-header" style="margin-top: 0px;">
+        <h4>Slider</h4>
+        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+            <li class="breadcrumb-item">
+                <a asp-area="AdminAreas" asp-controller="Home" asp-action="Statistics">
+                    <i class="icofont icofont-home"></i>
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#!">Entities</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a asp-area="AdminAreas" asp-controller="Slider" asp-action="Index">Slider</a>
+            </li>
+        </ol>
+    </div>
+</div>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<h4>Slider</h4>
 <table class="table">
     <thead>
         <tr>

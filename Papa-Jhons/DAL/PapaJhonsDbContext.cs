@@ -21,6 +21,8 @@ namespace Papa_Jhons.DAL
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<ContactUs> Contact { get; set; }
+        public DbSet<Rules> Rules { get; set; }
+
 
 
 

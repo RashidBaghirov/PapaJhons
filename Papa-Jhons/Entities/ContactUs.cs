@@ -7,6 +7,7 @@
         public string PhoneNumber { get; set; }
         public string Comment { get; set; }
         public DateTime SendTime { get; set; }
+        public bool IsReply { get; set; }
     }
 
 }

@@ -7,6 +7,8 @@ using Papa_Jhons.Utilities;
 namespace Papa_Jhons.Areas.AdminAreas.Controllers
 {
     [Area("AdminAreas")]
+    [Authorize(Roles = "Admin,Moderator")]
+
     public class CategoryController : Controller
     {
         private readonly PapaJhonsDbContext _context;
@@ -52,18 +54,18 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
 
         public IActionResult Edit(int id)
         {
-            if (id == 0) return NotFound();
+            if (id == 0) return Redirect("~/Error/Error");
             Category? category = _context.Categories.FirstOrDefault(c => c.Id == id);
-            if (category is null) return NotFound();
+            if (category is null) return Redirect("~/Error/Error");
             return View(category);
         }
 
         [HttpPost]
         public IActionResult Edit(int id, Category editCategory)
         {
-            if (id != editCategory.Id) return NotFound();
+            if (id != editCategory.Id) return Redirect("~/Error/Error");
             Category? category = _context.Categories.FirstOrDefault(c => c.Id == id);
-            if (category is null) return NotFound();
+            if (category is null) return Redirect("~/Error/Error");
             bool duplicate = _context.Categories.Any(c => c.Name == editCategory.Name && category.Name != editCategory.Name);
             if (duplicate)
             {
@@ -77,27 +79,27 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
 
         public IActionResult Details(int id)
         {
-            if (id == 0) return NotFound();
+            if (id == 0) return Redirect("~/Error/Error");
             Category? category = _context.Categories.FirstOrDefault(c => c.Id == id);
-            return category is null ? BadRequest() : View(category);
+            return category is null ? Redirect("~/Error/Error") : View(category);
         }
 
 
 
         public IActionResult Delete(int id)
         {
-            if (id == 0) return NotFound();
+            if (id == 0) return Redirect("~/Error/Error");
             Category? category = _context.Categories.FirstOrDefault(c => c.Id == id);
-            if (category is null) return NotFound();
+            if (category is null) return Redirect("~/Error/Error");
             return View(category);
         }
 
         [HttpPost]
         public IActionResult Delete(int id, Category deleteCategory)
         {
-            if (id != deleteCategory.Id) return NotFound();
+            if (id != deleteCategory.Id) return Redirect("~/Error/Error");
             Category? category = _context.Categories.FirstOrDefault(c => c.Id == id);
-            if (category is null) return NotFound();
+            if (category is null) return Redirect("~/Error/Error");
             _context.Categories.Remove(category);
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));

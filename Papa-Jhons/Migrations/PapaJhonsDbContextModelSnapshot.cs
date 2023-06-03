@@ -215,6 +215,9 @@ namespace Papa_Jhons.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsReply")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -376,6 +379,23 @@ namespace Papa_Jhons.Migrations
                     b.HasIndex("PizzaCategoryId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Papa_Jhons.Entities.Rules", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Rule")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Rules");
                 });
 
             modelBuilder.Entity("Papa_Jhons.Entities.Setting", b =>
@@ -559,7 +579,7 @@ namespace Papa_Jhons.Migrations
             modelBuilder.Entity("Papa_Jhons.Entities.Order", b =>
                 {
                     b.HasOne("Papa_Jhons.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -620,6 +640,11 @@ namespace Papa_Jhons.Migrations
             modelBuilder.Entity("Papa_Jhons.Entities.PizzaCategory", b =>
                 {
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Papa_Jhons.Entities.User", b =>
+                {
+                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }

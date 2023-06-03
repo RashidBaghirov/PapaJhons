@@ -1,13 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Papa_Jhons.DAL;
 using Papa_Jhons.Entities;
+using Papa_Jhons.Utilities;
 using Papa_Jhons.Utilities.Extension;
 using System.Net.Security;
 
 namespace Papa_Jhons.Areas.AdminAreas.Controllers
 {
     [Area("AdminAreas")]
+    [Authorize(Roles = "Admin,Moderator")]
+
     public class SliderController : Controller
     {
         readonly PapaJhonsDbContext _context;
@@ -66,12 +70,12 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
         {
             if (id <= 0)
             {
-                return NotFound();
+                return Redirect("~/Error/Error");
             }
             Slider slider = _context.Sliders.FirstOrDefault(s => s.Id == id);
             if (slider is null)
             {
-                return BadRequest();
+                return Redirect("~/Error/Error");
             }
             return View(slider);
         }
@@ -79,8 +83,12 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(int id, Slider edited)
         {
-            if (id != edited.Id) return NotFound();
+            if (id != edited.Id) return Redirect("~/Error/Error");
             Slider slider = _context.Sliders.FirstOrDefault(s => s.Id == id);
+            if (slider is null)
+            {
+                return Redirect("~/Error/Error");
+            }
             if (!ModelState.IsValid) return View(slider);
             _context.Entry<Slider>(slider).CurrentValues.SetValues(edited);
 
@@ -97,25 +105,25 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
 
         public IActionResult Details(int id)
         {
-            if (id == 0) return NotFound();
+            if (id == 0) return Redirect("~/Error/Error");
             Slider? slider = _context.Sliders.FirstOrDefault(s => s.Id == id);
-            return slider is null ? BadRequest() : View(slider);
+            return slider is null ? Redirect("~/Error/Error") : View(slider);
         }
 
         public IActionResult Delete(int id)
         {
-            if (id == 0) return NotFound();
+            if (id == 0) return Redirect("~/Error/Error");
             Slider? slider = _context.Sliders.FirstOrDefault(s => s.Id == id);
-            if (slider is null) return NotFound();
+            if (slider is null) return Redirect("~/Error/Error");
             return View(slider);
         }
 
         [HttpPost]
         public IActionResult Delete(int id, Slider deleteslider)
         {
-            if (id != deleteslider.Id) return NotFound();
+            if (id != deleteslider.Id) return Redirect("~/Error/Error");
             Slider? slider = _context.Sliders.FirstOrDefault(s => s.Id == id);
-            if (slider is null) return NotFound();
+            if (slider is null) return Redirect("~/Error/Error");
             var imagefolderPath = Path.Combine(_env.WebRootPath, "assets", "images", "skins", "fashion");
 
             string filepath = Path.Combine(imagefolderPath, "slider", slider.ImagePath);

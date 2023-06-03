@@ -1,5 +1,22 @@
 ﻿@model IEnumerable<Papa_Jhons.Entities.Category>
-
+<div class="row">
+    <div class="main-header" style="margin-top: 0px;">
+        <h4>Category</h4>
+        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+            <li class="breadcrumb-item">
+                <a asp-area="AdminAreas" asp-controller="Home" asp-action="Statistics">
+                    <i class="icofont icofont-home"></i>
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#!">Entities</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a asp-area="AdminAreas" asp-controller="Category" asp-action="Index">Category</a>
+            </li>
+        </ol>
+    </div>
+</div>
 <p>
     <a asp-action="Create">Create New</a>
 </p>

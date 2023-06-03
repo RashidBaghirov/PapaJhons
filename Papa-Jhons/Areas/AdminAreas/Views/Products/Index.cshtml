@@ -1,5 +1,43 @@
 ﻿@model IEnumerable<Papa_Jhons.Entities.Product>
+<div class="row">
+    <div class="main-header" style="margin-top: 0px;">
+        <h4>Products</h4>
+        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+            <li class="breadcrumb-item">
+                <a asp-area="AdminAreas" asp-controller="Home" asp-action="Statistics">
+                    <i class="icofont icofont-home"></i>
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#!">Entities</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a asp-area="AdminAreas" asp-controller="Products" asp-action="Index">Products</a>
+            </li>
+        </ol>
+    </div>
+</div>
+<form method="post" asp-controller="Products" asp-action="Index">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" name="search" id="searchInput" placeholder="Searching 'Product Name'"/>
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="submitForm()">Search</button>
+    </div>
+</form>
 
+<script>
+    function submitForm() {
+        var searchValue = document.getElementById("searchInput").value;
+        var form = document.querySelector("form");
+
+        if (searchValue) {
+            form.submit();
+        } else {
+            form.action = "@Url.Action("Index")";
+            form.method = "post";
+            form.submit();
+        }
+    }
+</script>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -34,14 +72,14 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
+                    @Html.DisplayFor(modelItem => item.Price)<span>₼</span>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Desc)
             </td>
             <td>
-               <div class="image">
-                   <img src="@item.ImagePath" />
+               <div class="image" style="width:150px;height:150px;">
+                        <img style="width:100%;object-fit:contain" src="@item.ImagePath" />
                </div>
             </td>
             <td>

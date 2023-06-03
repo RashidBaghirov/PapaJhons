@@ -1,17 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Papa_Jhons.DAL;
 using Papa_Jhons.Entities;
+using Papa_Jhons.Utilities;
 using Papa_Jhons.Utilities.Extension;
 
 namespace Papa_Jhons.Areas.AdminAreas.Controllers
 {
     [Area("AdminAreas")]
-    public class OrdersController : Controller
+    [Authorize(Roles = "Admin,Moderator")]
+
+    public class OffersController : Controller
     {
         private readonly PapaJhonsDbContext _context;
         private readonly IWebHostEnvironment _env;
 
-        public OrdersController(PapaJhonsDbContext context, IWebHostEnvironment env)
+        public OffersController(PapaJhonsDbContext context, IWebHostEnvironment env)
         {
             _context = context;
             _env = env;
@@ -46,7 +50,7 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
                 ModelState.AddModelError("Image", "Max Size 1MB");
                 return View();
             }
-            string imagesFolderPath = Path.Combine("assets", "images", "SliderImages");
+            string imagesFolderPath = Path.Combine("assets", "images", "Offers");
 
             createOffers.ImagePath = await createOffers.Image.CreateImage(_env.WebRootPath, imagesFolderPath);
 
@@ -59,9 +63,9 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
 
         public IActionResult Edit(int id)
         {
-            if (id == 0) return NotFound();
+            if (id == 0) return Redirect("~/Error/Error");
             Offers? offers = _context.Offers.FirstOrDefault(s => s.Id == id);
-            if (offers is null) return NotFound();
+            if (offers is null) return Redirect("~/Error/Error");
 
             return View(offers);
         }
@@ -70,7 +74,7 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Offers editedoffers)
         {
-            if (id == 0) return NotFound();
+            if (id == 0) return Redirect("~/Error/Error");
             Offers? offers = _context.Offers.FirstOrDefault(s => s.Id == id);
             if (!ModelState.IsValid)
             {
@@ -81,7 +85,7 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
 
             if (editedoffers.Image is not null)
             {
-                string imagesFolderPath = Path.Combine("assets", "images", "SliderImages");
+                string imagesFolderPath = Path.Combine("assets", "images", "Offers");
 
                 string FullPath = Path.Combine(_env.WebRootPath, imagesFolderPath, offers.ImagePath);
 
@@ -96,27 +100,31 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
 
         public IActionResult Detail(int id)
         {
-            if (id == 0) return NotFound();
+            if (id == 0) return Redirect("~/Error/Error");
 
-            Slider? slider = _context.Sliders.FirstOrDefault(s => s.Id == id);
+            Offers? offers = _context.Offers.FirstOrDefault(s => s.Id == id);
 
-            if (slider is null)
+            if (offers is null)
             {
-                return BadRequest();
+                return Redirect("~/Error/Error");
             }
 
-            return View(slider);
+            return View(offers);
         }
 
         public async Task<IActionResult> Delete(int id, Offers deleted)
         {
-            if (id == 0) return NotFound();
+            if (id == 0) return Redirect("~/Error/Error");
 
             Offers? offers = _context.Offers.FirstOrDefault(s => s.Id == id);
+            if (offers is null)
+            {
+                return Redirect("~/Error/Error");
+            }
 
             if (deleted.Image is null)
             {
-                string imagesFolderPath = Path.Combine("assets", "images", "SliderImages");
+                string imagesFolderPath = Path.Combine("assets", "images", "Offers");
 
                 string FullPath = Path.Combine(_env.WebRootPath, imagesFolderPath, offers.ImagePath);
 

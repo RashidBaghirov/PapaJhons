@@ -1,0 +1,28 @@
+﻿@model Papa_Jhons.Entities.Offers
+
+<h4>Offers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <div class="image" style="width:150px;height:150px;">
+            <img style="width:100%;object-fit:contain" src="~/assets/images/@Model.ImagePath" />
+        </div>
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

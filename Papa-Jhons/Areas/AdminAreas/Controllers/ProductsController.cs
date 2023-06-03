@@ -7,6 +7,7 @@ using Papa_Jhons.DAL;
 using Microsoft.EntityFrameworkCore;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using System.Xml.Linq;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Papa_Jhons.Areas.AdminAreas.Controllers
 {
@@ -33,6 +34,22 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
             return View(products);
         }
 
+
+        [HttpPost]
+        public IActionResult Index(string search, int page = 1)
+        {
+            ViewBag.TotalPage = Math.Ceiling((double)_context.Products.Count() / 5);
+            ViewBag.CurrentPage = page;
+
+            IEnumerable<Product> products = _context.Products.Include(p => p.Category).Include(x => x.PizzaCategory)
+                                                         .AsNoTracking().Skip((page - 1) * 5).Take(5).AsEnumerable();
+            if (!string.IsNullOrEmpty(search))
+            {
+                products = products.Where(x => x.Name.ToLower().StartsWith(search.ToLower().Substring(0, Math.Min(search.Length, 3)))).ToList();
+            }
+
+            return View(products);
+        }
 
         public IActionResult Create()
         {
@@ -83,12 +100,12 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
 
         public IActionResult Edit(int id)
         {
-            if (id == 0) return BadRequest();
+            if (id == 0) return Redirect("~/Error/Error");
             Product product = _context.Products.Include(x => x.Category).Include(x => x.PizzaCategory).FirstOrDefault(x => x.Id == id);
             ViewBag.Category = _context.Categories.AsEnumerable();
             ViewBag.PizzaCategory = _context.PizzaCategory.AsEnumerable();
 
-            if (product is null) return BadRequest();
+            if (product is null) return Redirect("~/Error/Error");
             return View(product);
         }
         [HttpPost]
@@ -98,7 +115,7 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
             ViewBag.Category = _context.Categories.AsEnumerable();
             ViewBag.PizzaCategory = _context.PizzaCategory.AsEnumerable();
 
-            if (product is null) return BadRequest();
+            if (product is null) return Redirect("~/Error/Error");
 
 
 
@@ -141,32 +158,32 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
 
         public IActionResult Details(int id)
         {
-            if (id == 0) return NotFound();
+            if (id == 0) return Redirect("~/Error/Error");
             Product product = _context.Products.Include(x => x.Category).Include(x => x.PizzaCategory).FirstOrDefault(x => x.Id == id);
             ViewBag.Category = _context.Categories.AsEnumerable();
             ViewBag.PizzaCategory = _context.PizzaCategory.AsEnumerable();
 
-            if (product is null) return BadRequest();
+            if (product is null) return Redirect("~/Error/Error");
             return View(product);
         }
 
         public IActionResult Delete(int id)
         {
-            if (id == 0) return NotFound();
+            if (id == 0) return Redirect("~/Error/Error");
             Product product = _context.Products.Include(x => x.Category).Include(x => x.PizzaCategory).FirstOrDefault(x => x.Id == id);
             ViewBag.Category = _context.Categories.AsEnumerable();
             ViewBag.PizzaCategory = _context.PizzaCategory.AsEnumerable();
 
-            if (product is null) return BadRequest();
+            if (product is null) return Redirect("~/Error/Error");
             return View(product);
         }
 
         [HttpPost]
         public IActionResult Delete(int id, Product delete)
         {
-            if (id != delete.Id) return NotFound();
+            if (id != delete.Id) return Redirect("~/Error/Error");
             Product? product = _context.Products.FirstOrDefault(s => s.Id == id);
-            if (product is null) return NotFound();
+            if (product is null) return Redirect("~/Error/Error");
 
             var imagefolderPath = Path.Combine(_env.WebRootPath, "assets", "images");
             string filepath = Path.Combine(imagefolderPath, "Products", product.ImagePath);
