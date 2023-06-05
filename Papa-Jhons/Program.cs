@@ -20,15 +20,15 @@ namespace Papa_Jhons
 
             builder.Services.AddAuthentication().AddGoogle(options =>
             {
-                options.ClientId = "866366361059-m9c9icfu0v1c8cth4prdedkfp2osa9cp.apps.googleusercontent.com";
-                options.ClientSecret = "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";
+                options.ClientId = "866366361059-2c17uft7g724ev1a68brsb1d9i1phu4n.apps.googleusercontent.com";
+                options.ClientSecret = "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";
             });
 
             builder.Services.AddAuthentication()
             .AddFacebook(options =>
             {
-                options.AppId = "203567782610976";
-                options.AppSecret = "9537ea0fa0ab56e49e29f4a9385dce52";
+                options.AppId = "827174275653048";
+                options.AppSecret = "edf899081c89cb6209899179124d86c9";
             });
             builder.Services.AddDbContext<PapaJhonsDbContext>(opt =>
             {

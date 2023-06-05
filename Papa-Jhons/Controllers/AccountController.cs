@@ -8,6 +8,7 @@ using Papa_Jhons.DAL;
 using Papa_Jhons.Utilities;
 using Microsoft.EntityFrameworkCore;
 using Papa_Jhons.Services;
+using System.Security.Claims;
 
 namespace Papa_Jhons.Controllers
 {
@@ -226,15 +227,29 @@ namespace Papa_Jhons.Controllers
                 User = user,
                 Token = account.Token
             };
+            if (!ModelState.IsValid)
+            {
+                foreach (string message in ModelState.Values.SelectMany(e => e.Errors).Select(e => e.ErrorMessage))
+                {
+                    ModelState.AddModelError("", message);
+                }
+            }
             await _usermanager.ResetPasswordAsync(user, account.Token, account.Password);
             TempData["Security"] = true;
             return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
-        public async Task<IActionResult> Details(ProfileVM profileVM)
+        public async Task<IActionResult> Index(ProfileVM profileVM)
         {
-            if (!ModelState.IsValid) return View();
+            TempData["Security"] = false;
+            if (!ModelState.IsValid)
+            {
+                foreach (string message in ModelState.Values.SelectMany(e => e.Errors).Select(e => e.ErrorMessage))
+                {
+                    ModelState.AddModelError("", message);
+                }
+            }
 
             User member = await _usermanager.FindByNameAsync(User.Identity.Name);
 
@@ -266,9 +281,133 @@ namespace Papa_Jhons.Controllers
                 return View();
             }
             await _signInManager.SignOutAsync();
+            TempData["Security"] = true;
             return RedirectToAction("index", "Home");
         }
 
+
+
+        [HttpGet]
+        public IActionResult RegisterWithGoogle(string returnUrl = null)
+        {
+            var authenticationProperties = _signInManager.ConfigureExternalAuthenticationProperties("Google", Url.Action("GoogleCallback", "Account", new { returnUrl }));
+            return Challenge(authenticationProperties, "Google");
+        }
+        [HttpGet]
+        public async Task<IActionResult> GoogleCallback(string returnUrl = null)
+        {
+            var externalLoginInfo = await _signInManager.GetExternalLoginInfoAsync();
+            if (externalLoginInfo == null)
+            {
+                return RedirectToAction("Register");
+            }
+
+            var email = externalLoginInfo.Principal.FindFirstValue(ClaimTypes.Email);
+            var userName = externalLoginInfo.Principal.FindFirstValue(ClaimTypes.Name);
+
+            var existingUser = await _usermanager.FindByEmailAsync(email);
+            if (existingUser != null)
+            {
+                await _signInManager.SignInAsync(existingUser, isPersistent: false);
+
+                if (!string.IsNullOrEmpty(returnUrl))
+                {
+                    return Redirect(returnUrl);
+                }
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            var userNameWithoutSpaces = userName.Replace(" ", string.Empty);
+            var newUser = new User
+            {
+                FullName = userName,
+                UserName = userNameWithoutSpaces.ToLower(),
+                Email = email,
+                EmailConfirmed = true
+
+            };
+
+            var result = await _usermanager.CreateAsync(newUser);
+            if (result.Succeeded)
+            {
+                await _usermanager.AddToRoleAsync(newUser, Roles.User.ToString());
+
+                await _signInManager.SignInAsync(newUser, isPersistent: false);
+
+                if (!string.IsNullOrEmpty(returnUrl))
+                {
+                    return Redirect(returnUrl);
+                }
+
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Register");
+            }
+        }
+
+        [HttpGet]
+        public IActionResult RegisterWithFacebook(string returnUrl = null)
+        {
+            var authenticationProperties = _signInManager.ConfigureExternalAuthenticationProperties("Facebook", Url.Action("FacebookCallback", "Account", new { returnUrl }));
+            return Challenge(authenticationProperties, "Facebook");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> FacebookCallback(string returnUrl = null)
+        {
+            var externalLoginInfo = await _signInManager.GetExternalLoginInfoAsync();
+            if (externalLoginInfo == null)
+            {
+                return RedirectToAction("Register");
+            }
+
+            var email = externalLoginInfo.Principal.FindFirstValue(ClaimTypes.Email);
+            var userName = externalLoginInfo.Principal.FindFirstValue(ClaimTypes.Name);
+
+            var existingUser = await _usermanager.FindByEmailAsync(email);
+            if (existingUser != null)
+            {
+                await _signInManager.SignInAsync(existingUser, isPersistent: false);
+
+                if (!string.IsNullOrEmpty(returnUrl))
+                {
+                    return Redirect(returnUrl);
+                }
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            var userNameWithoutSpaces = userName.Replace(" ", string.Empty);
+            var newUser = new User
+            {
+                FullName = userName,
+                UserName = userNameWithoutSpaces.ToLower(),
+                Email = email,
+                EmailConfirmed = true
+            };
+
+            var result = await _usermanager.CreateAsync(newUser);
+            if (result.Succeeded)
+            {
+                await _usermanager.AddToRoleAsync(newUser, Roles.User.ToString());
+
+                await _signInManager.SignInAsync(newUser, isPersistent: false);
+
+                if (!string.IsNullOrEmpty(returnUrl))
+                {
+                    return Redirect(returnUrl);
+                }
+
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Register");
+            }
+        }
 
     }
 }

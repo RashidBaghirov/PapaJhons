@@ -15,6 +15,9 @@
         </label>
     </div>
     <button type="submit">SIGN IN</button>
+    <a class="mt-3 btn btn-danger" asp-controller="Account" asp-action="RegisterWithGoogle" asp-route-returnUrl="@Context.Request.Path">Enter Google</a>
+    <a class="mt-3 btn btn-info" asp-controller="Account" asp-action="RegisterWithFacebook" asp-route-returnUrl="@Context.Request.Path">Enter Facebook</a>
+
     <a data-bs-toggle="modal" data-bs-target="#forgotModal" class="forgot-password">
         Forgot your
         password?
