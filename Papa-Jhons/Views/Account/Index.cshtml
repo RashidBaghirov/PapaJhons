@@ -1,5 +1,10 @@
 ﻿@model ProfileVM
-
+@{
+    List<Order> orders = ViewBag.Orders;
+    IQueryable<Product> products = ViewBag.AllProduct;
+    int countitem = 1;
+   int count = 1;
+}
 <section class="account-section">
     <div class="container-fluid px-4 px-sm-5">
         <h1>account</h1>
@@ -39,119 +44,67 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr data-bs-toggle="collapse" data-bs-target="#collapseExample1"
-                                    aria-expanded="false" aria-controls="collapseExample1">
-                                    <th scope="row">1</th>
-                                    <td><i class="fas fa-clipboard-list table-icon"></i></td>
-                                    <td>3</td>
-                                    <td class="table-price">18.80 ₼</td>
-                                    <td>26.11.2021</td>
-                                    <td>
-                                        <h5><span class="badge bg-success">Accepted</span></h5>
-                                    </td>
+                                @foreach (Order order in orders)
+                                {
+                                    <tr data-bs-toggle="collapse" data-bs-target="#@(string.Concat("collapseExample",count))"
+                                        aria-expanded="false" aria-controls="@(string.Concat("collapseExample",count))">
 
-                                <tr>
-                                    <td colspan="12">
-                                        <div class="collapse" id="collapseExample1">
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Pizza Image</th>
-                                                        <th scope="col">Pizza Name</th>
-                                                        <th scope="col">Pizza Size</th>
-                                                        <th scope="col">Pizza Price</th>
-                                                        <th scope="col">Count</th>
-                                                        <th scope="col">Total Price</th>
-                                                    </tr>
-                                                </thead>
+                                        <th scope="row">@count</th>
+                                        <td><i class="fas fa-clipboard-list table-icon"></i></td>
+                                        <td>@order.OrderItems.Count</td>
+                                        <td class="table-price">@order.TotalPrice ₼</td>
+                                        <td>@order.Date.ToString("dd.MMMM.yyyy")</td>
+                                        <td>
+                                            <h5>
+                                                <span class="badge bg-success">
+                                                    @(order.Status == true ? "Accepted" : (order.Status == false ? "Rejected" : "Pending"))
+                                                </span>
+                                            </h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
 
-                                                <tbody style="border-top-width:1px;"
-                                                       class="text-center align-middle">
+                                        <td colspan="12">
+                                            <div class="collapse" id="@(string.Concat("collapseExample",count))">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col"> Image</th>
+                                                            <th scope="col"> Name</th>
+                                                            <th scope="col"> Price</th>
+                                                            <th scope="col">Count</th>
+                                                            <th scope="col">Total Price</th>
+                                                        </tr>
+                                                    </thead>
 
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td class="table-image">
-                                                            <img src="./assets/images/order-1.png" alt="">
-                                                        </td>
-                                                        <td>Grill Chicken Parmesan</td>
-                                                        <td>Mini pizza, 15 cm</td>
-                                                        <td class="table-price">4.90 ₼</td>
-                                                        <td>2</td>
-                                                        <td class="table-price">9.80 ₼</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td class="table-image">
-                                                            <img src="./assets/images/order-2.png" alt="">
-                                                        </td>
-                                                        <td>Spicy Garden Special</td>
-                                                        <td>Small, 15 cm</td>
-                                                        <td class="table-price">9.00 ₼</td>
-                                                        <td>1</td>
-                                                        <td class="table-price">9.00 ₼</td>
-                                                    </tr>
+                                                    <tbody style="border-top-width:1px;"
+                                                           class="text-center align-middle">
+                                                
+                                                            @foreach (OrderItem item in order.OrderItems)
+                                                            {
+                                                                Product product = products.FirstOrDefault(x => x.Id == item.ProductId);
+                                                                <tr>
+                                                                    <td>@countitem</td>
+                                                                    <td class="table-image">
+                                                                        <img src="@product.ImagePath" alt="">
+                                                                    </td>
+                                                                    <td>Grill Chicken Parmesan</td>
+                                                                    <td class="table-price">@item.Price ₼</td>
+                                                                    <td>@item.Quantity</td>
+                                                                <td class="table-price">@(item.Quantity * @item.Price) ₼</td>
+                                                                </tr>
+                                                                countitem++;
+                                                            }
 
-                                                </tbody>
-                                            </table>
+                                                    </tbody>
+                                                </table>
 
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tr>
-
-                                <tr data-bs-toggle="collapse" data-bs-target="#collapseExample2"
-                                    aria-expanded="false" aria-controls="collapseExample2">
-                                    <th scope="row">2</th>
-                                    <td><i class="fas fa-clipboard-list table-icon"></i></td>
-                                    <td>1</td>
-                                    <td class="table-price">13.00 ₼</td>
-                                    <td>20.10.2021</td>
-                                    <td>
-                                        <h5><span class="badge bg-success">Accepted</span></h5>
-                                    </td>
-
-                                <tr>
-                                    <td colspan="12">
-                                        <div class="collapse" id="collapseExample2">
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Pizza Image</th>
-                                                        <th scope="col">Pizza Name</th>
-                                                        <th scope="col">Pizza Size</th>
-                                                        <th scope="col">Pizza Price</th>
-                                                        <th scope="col">Count</th>
-                                                        <th scope="col">Total Price</th>
-                                                    </tr>
-                                                </thead>
-
-                                                <tbody style="border-top-width:1px;"
-                                                       class="text-center align-middle">
-
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td class="table-image">
-                                                            <img src="./assets/images/order-3.png" alt="">
-                                                        </td>
-                                                        <td>Acılı Vegetarian</td>
-                                                        <td>Orta, 30 cm</td>
-                                                        <td class="table-price">13.00 ₼</td>
-                                                        <td>1</td>
-                                                        <td class="table-price">13.00 ₼</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tr>
-
-
-
-
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    count++;
+                                }
                             </tbody>
                         </table>
 

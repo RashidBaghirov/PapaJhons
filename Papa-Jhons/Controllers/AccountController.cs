@@ -6,6 +6,8 @@ using Papa_Jhons.ViewModel;
 using Papa_Jhons.Entities;
 using Papa_Jhons.DAL;
 using Papa_Jhons.Utilities;
+using Microsoft.EntityFrameworkCore;
+using Papa_Jhons.Services;
 
 namespace Papa_Jhons.Controllers
 {
@@ -15,13 +17,15 @@ namespace Papa_Jhons.Controllers
         private readonly PapaJhonsDbContext _context;
         private readonly SignInManager<User> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly ProductService _productService;
 
-        public AccountController(UserManager<User> usermanager, PapaJhonsDbContext context, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager)
+        public AccountController(UserManager<User> usermanager, PapaJhonsDbContext context, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager, ProductService productService)
         {
             _usermanager = usermanager;
             _context = context;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _productService = productService;
         }
         public async Task<IActionResult> Index()
         {
@@ -37,6 +41,8 @@ namespace Papa_Jhons.Controllers
                 FullName = user.FullName
             };
 
+            ViewBag.Orders = _context.Orders.Include(x => x.OrderItems).Include(x => x.User).Where(x => x.UserId == user.Id).ToList();
+            ViewBag.AllProduct = _productService.GetAllProducts();
             return View(profileVM);
         }
 

@@ -112,7 +112,7 @@
                      </a>
                      <ul class="dropdown-menu settings-menu">
                                 <li><a asp-area =" " asp-controller="Account" asp-action="Index"><i class="icon-settings"></i> Settings</a></li>
-                        <li><a href="#"><i class="icon-envelope-open"></i> My Messages</a></li>
+                        <li><a asp-controller="contact" asp-action="index"><i class="icon-envelope-open"></i> My Messages</a></li>
                         <li><a asp-area=" " asp-controller="Home" asp-action="Index"><i class="icon-home"></i>Go Site</a></li>
                         <li class="p-0">
                            <div class="dropdown-divider m-0"></div>
@@ -174,29 +174,31 @@
                     @foreach (ContactUs contact in contacts.Where(x=>x.IsReply==false))
                             {
                                 <div class="media friendlist-box" >
+                                    <a asp-controller="contact" asp-action="Replace" asp-route-id="@contact.Id">
 
-                                    <a class="media-left" href="#!">
-                                        <img class="media-object img-circle" src="https://img.myloview.com/stickers/user-icon-vector-people-icon-profile-vector-icon-person-illustration-business-user-icon-users-group-symbol-male-user-symbol-400-223068872.jpg" alt="Generic placeholder image">
+                                        <div class="media-left" href="#!">
+                                            <img class="media-object img-circle" src="https://img.myloview.com/stickers/user-icon-vector-people-icon-profile-vector-icon-person-illustration-business-user-icon-users-group-symbol-male-user-symbol-400-223068872.jpg" alt="Generic placeholder image">
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="friend-header">@contact.Name</div>
+                                            @if (Math.Round((DateTime.Now - contact.SendTime).TotalMinutes) < 60)
+                                            {
+                                                <small>@(Math.Round((DateTime.Now - contact.SendTime).TotalMinutes)) minutes ago</small>
+                                            }
+                                            @if (Math.Round((DateTime.Now - contact.SendTime).TotalMinutes) > 60 && Math.Round((DateTime.Now - contact.SendTime).TotalMinutes) < 1440)
+                                            {
+                                                <small>@(Math.Round((DateTime.Now - contact.SendTime).TotalHours)) hours ago</small>
+                                            }
+                                            @if (Math.Round((DateTime.Now - contact.SendTime).TotalHours) > 24 && Math.Round((DateTime.Now - contact.SendTime).TotalHours) < 720)
+                                            {
+                                                <small>@(Math.Round((DateTime.Now - contact.SendTime).TotalDays)) days ago</small>
+                                            }
+                                            @if (Math.Round((DateTime.Now - contact.SendTime).TotalDays) > 30)
+                                            {
+                                                <small>@contact.SendTime.ToString("D")</small>
+                                            }
+                                        </div>
                                     </a>
-                                    <div class="media-body">
-                                        <div class="friend-header">@contact.Name</div>
-                                        @if (Math.Round((DateTime.Now - contact.SendTime).TotalMinutes) < 60)
-                                        {
-                                            <small>@(Math.Round((DateTime.Now - contact.SendTime).TotalMinutes)) minutes ago</small>
-                                        }
-                                        @if (Math.Round((DateTime.Now - contact.SendTime).TotalMinutes) > 60 && Math.Round((DateTime.Now - contact.SendTime).TotalMinutes) < 1440)
-                                        {
-                                            <small>@(Math.Round((DateTime.Now - contact.SendTime).TotalHours)) hours ago</small>
-                                        }
-                                        @if (Math.Round((DateTime.Now - contact.SendTime).TotalHours) > 24 && Math.Round((DateTime.Now - contact.SendTime).TotalHours) < 720)
-                                        {
-                                            <small>@(Math.Round((DateTime.Now - contact.SendTime).TotalDays)) days ago</small>
-                                        }
-                                        @if (Math.Round((DateTime.Now - contact.SendTime).TotalDays) > 30)
-                                        {
-                                            <small>@contact.SendTime.ToString("D")</small>
-                                        }
-                                    </div>
                                 </div>
                             }
                   

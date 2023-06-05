@@ -59,25 +59,28 @@ namespace Papa_Jhons.Controllers
             Order order = new Order()
             {
                 City = orderVM.City,
-                Adress = orderVM.Address,
+                Address = orderVM.Address,
                 TotalPrice = 0,
                 Date = DateTime.Now,
                 UserId = user.Id,
                 Number = orderVM.Number,
-                Message = orderVM.Message
+                Message = orderVM.Message,
+                Status = false
             };
 
 
             foreach (BasketItem item in model.BasketItems)
             {
-                order.TotalPrice += (double)item.Product.Price;
+
                 OrderItem orderItem = new OrderItem
                 {
                     Name = item.Product.Name,
                     Price = (double)item.Product.Price,
                     ProductId = item.ProductId,
+                    Quantity = item.Count,
                     Order = order
                 };
+                order.TotalPrice += (double)item.Product.Price * item.Count;
                 _context.OrderItems.Add(orderItem);
             }
             _context.BasketItems.RemoveRange(model.BasketItems);

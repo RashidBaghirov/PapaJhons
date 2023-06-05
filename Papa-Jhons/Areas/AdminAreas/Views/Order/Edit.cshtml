@@ -5,63 +5,73 @@
 }
 
 
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h5 class="card-title">@Model.User.FullName</h5>
-        <p class="card-text">Email:@Model.User.Email</p>
-        <p class="card-text">Country:@Model.City</p>
-        <p class="card-text">State:@Model.Adress</p>
-        <p class="card-text">Email:@Model.Number</p>
-        <p class="card-text">Adress:@Model.Adress</p>
-        <p class="card-text">Date:@Model.Date.ToString("dd.MMMM.yyyy HH:mm")</p>
-        <ul style="list-style-type:none">
-         
+<div  style="
+    display: flex;
+    justify-content: center;
+    margin:10px;
+">
+    <div class="card" style="display: flex;width: 18rem;justify-content: center;padding:20px;">
+        <div class="card-body">
+            <h5 class="card-title">@Model.User.FullName</h5>
+            <p class="card-text">Email:@Model.User.Email</p>
+            <p class="card-text">City:@Model.City</p>
+            <p class="card-text">Email:@Model.Number</p>
+            <p class="card-text">Address:@Model.Address</p>
+            <p class="card-text">Date:@Model.Date.ToString("dd.MMMM.yyyy HH:mm")</p>
+            <ul style="list-style-type:none">
+
                 @foreach (OrderItem item in Model.OrderItems)
                 {
-                Product product = products.FirstOrDefault(x => x.Id == item.ProductId);
-                <li>
-                   <div class="image" style="width:100px;height:100px;">
-                        <img style="width:100%;object-fit:contain" src="@product.ImagePath" />
-                   </div>
-                </li>
-                <li>
-                 @item.Name
-                </li>
-                <li>
-                 $@item.Price
-                </li>
-                 
-                }
-           
-            @if (Model.Status == null)
-            {
-                <td>
-                    <button class="btn btn-warning">
-                        Pending
-                    </button>
-                </td>
-            }
-            else if (Model.Status == true)
-            {
-                <td>
-                    <button class="btn btn-success">
-                        Accepted
-                    </button>
-                </td>
-            }
-            else
-            {
-                <td>
-                    <button class="btn btn-danger">
-                        Rejected
-                    </button>
-                </td>
-            }
-        </ul>
+                    Product product = products.FirstOrDefault(x => x.Id == item.ProductId);
+                    <li>
+                        <div class="image" style="width:100px;height:100px;">
+                            <img style="width:100%;object-fit:contain" src="@product.ImagePath" />
+                        </div>
+                    </li>
+                    <li>
+                        @item.Name
+                    </li>
+                    <li>
+                        @item.Price<span>₼</span>
+                    </li>
 
-        <p class="card-text">TotalPrice:@Model.TotalPrice</p>
+                }
+
+                @if (Model.Status == null)
+                {
+                    
+                        <button class="btn btn-warning">
+                            Pending
+                        </button>
+                    
+                }
+                else if (Model.Status == true)
+                {
+                    
+                        <button class="btn btn-success">
+                            Accepted
+                        </button>
+                    
+                }
+                else
+                {
+                    
+                        <button class="btn btn-danger">
+                            Rejected
+                        </button>
+                    
+                }
+            </ul>
+
+
+            <p class="card-text">TotalPrice: @Model.TotalPrice <span>₼</span></p>
+        </div>
     </div>
 </div>
-<a style="display:flex;justify-content:center;align-items:center;width:289px" class="btn btn-success" asp-controller="Order" asp-action="Accept" asp-route-id="@Model.Id">Accept</a>
-<a style="display:flex;justify-content:center;align-items:center;width:289px" class="btn btn-danger" asp-controller="Order" asp-action="Reject" asp-route-id="@Model.Id">Reject</a>
+<div style="display: flex;justify-content: center;">
+    <div>
+        <a style="display:flex;justify-content:center;align-items:center;width:289px" class="btn btn-success" asp-controller="Order" asp-action="Accept" asp-route-id="@Model.Id">Accept</a>
+        <a style="display:flex;justify-content:center;align-items:center;width:289px" class="btn btn-danger" asp-controller="Order" asp-action="Reject" asp-route-id="@Model.Id">Reject</a>
+    </div>
+</div>
 

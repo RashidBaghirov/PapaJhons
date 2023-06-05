@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Papa_Jhons.DAL;
 using Papa_Jhons.Entities;
+using Papa_Jhons.Services;
 using Papa_Jhons.Utilities;
 
 namespace Papa_Jhons.Areas.AdminAreas.Controllers
@@ -13,10 +14,12 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
     public class OrderController : Controller
     {
         private readonly PapaJhonsDbContext _context;
+        private readonly EmailService _emailService;
 
-        public OrderController(PapaJhonsDbContext context)
+        public OrderController(PapaJhonsDbContext context, EmailService emailService)
         {
             _context = context;
+            _emailService = emailService;
         }
         public IActionResult Index()
         {
@@ -35,27 +38,35 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
         {
 
 
-            Order order = _context.Orders.FirstOrDefault(o => o.Id == id);
+            Order order = _context.Orders.Include(x => x.User).FirstOrDefault(o => o.Id == id);
             if (order == null) return Redirect("~/Error/Error");
 
             order.Status = true;
 
             _context.SaveChanges();
+            string recipientEmail = order.User.Email;
+            string subject = "Your order has been accepted";
+            string body = "Your order has been accepted. Thank you! The total amount to be paid is " + order.TotalPrice + "₼";
 
+
+            _emailService.SendEmail(recipientEmail, subject, body);
             return RedirectToAction("Index", "Order");
 
         }
         public IActionResult Reject(int id)
         {
-
-
-            Order order = _context.Orders.FirstOrDefault(o => o.Id == id);
+            Order order = _context.Orders.Include(x => x.User).FirstOrDefault(o => o.Id == id);
             if (order == null) return Redirect("~/Error/Error");
 
             order.Status = false;
 
             _context.SaveChanges();
+            string recipientEmail = order.User.Email;
+            string subject = "Your order has been rejected";
+            string body = "Your order has been rejected. Unfortunately, the products you ordered are currently out of stock.Thank you for your understanding.";
 
+
+            _emailService.SendEmail(recipientEmail, subject, body);
             return RedirectToAction("Index", "Order");
 
         }

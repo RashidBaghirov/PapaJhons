@@ -16,6 +16,8 @@ namespace Papa_Jhons
 
             builder.Services.AddScoped<LayoutService>();
             builder.Services.AddScoped<ProductService>();
+            builder.Services.AddScoped<EmailService>();
+
             builder.Services.AddAuthentication().AddGoogle(options =>
             {
                 options.ClientId = "866366361059-m9c9icfu0v1c8cth4prdedkfp2osa9cp.apps.googleusercontent.com";

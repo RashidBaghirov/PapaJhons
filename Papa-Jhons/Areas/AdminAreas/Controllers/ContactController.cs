@@ -58,6 +58,14 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
+        public IActionResult Delete(int id)
+        {
+            if (id == 0) return Redirect("~/Error/Error");
+            ContactUs contact = _context.Contact.FirstOrDefault(x => x.Id == id);
+            if (contact is null) return Redirect("~/Error/Error");
+            _context.Contact.Remove(contact);
+            _context.SaveChanges();
+            return View(contact);
+        }
     }
 }
