@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\resid\OneDrive\Desktop\PapaJhons\Papa_Jhons_Back\Papa-Jhons
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/About/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xBYm91dFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/About/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xBYm91dFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/About/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xBYm91dFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/About/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xBYm91dFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xBYm91dFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/resid/OneDrive/Desktop/PapaJhons/Papa_Jhons_Back/Papa-Jhons/Areas/AdminAreas/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhc1xWaWV3c1xDYXRlZ29yeVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

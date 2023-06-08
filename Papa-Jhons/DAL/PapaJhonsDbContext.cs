@@ -22,11 +22,7 @@ namespace Papa_Jhons.DAL
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<ContactUs> Contact { get; set; }
         public DbSet<Rules> Rules { get; set; }
-
-
-
-
-
+        public DbSet<About> Abouts { get; set; }
 
     }
 }

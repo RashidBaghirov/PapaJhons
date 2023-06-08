@@ -33,7 +33,7 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Replace(int id, string comment)
+        public async Task<IActionResult> Replace(int id, string replace)
         {
             if (id == 0) return Redirect("~/Error/Error");
             ContactUs contact = _context.Contact.FirstOrDefault(x => x.Id == id);
@@ -43,7 +43,7 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
             message.To.Add(new MailAddress(contact.Email));
             message.Subject = "PapaJhons Support";
             message.Body = string.Empty;
-            message.Body = $"{comment}";
+            message.Body = $"{replace}";
 
             SmtpClient smtpClient = new SmtpClient();
             smtpClient.Host = "smtp.gmail.com";
