@@ -1,5 +1,4 @@
-﻿@using Papa_Jhons.ViewModel;
-@inject Papa_Jhons.Services.LayoutService layoutService
+﻿@inject Papa_Jhons.Services.LayoutService layoutService
 @{
     BasketVm basket = layoutService.GetBaskets();
     List<Product> products = layoutService.GetProducts(); 
@@ -87,7 +86,11 @@
                         </li>
                     }
 
-                  
+                    @foreach (var item in Model.BasketItems)
+                    {
+                        <input type="hidden" name="BasketItems[@Model.BasketItems.IndexOf(item)]." value="@item.ProductId" />
+                        <input type="hidden" name="BasketItems[@Model.BasketItems.IndexOf(item)].Count" value="@item.Count" />
+                    }
 
 
                 </ul>

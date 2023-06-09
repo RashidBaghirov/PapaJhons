@@ -63,7 +63,7 @@ namespace Papa_Jhons.Controllers
             if (_usermanager.Users.Any(x => x.NormalizedEmail == account.Email.ToUpper()))
             {
                 ModelState.AddModelError("Email", "Bu e-poçtda istifadəçi mövcuddur");
-                return Redirect(Request.Headers["Referer"].ToString());
+                return RedirectToAction("Index", "Home");
             }
             IdentityResult result = await _usermanager.CreateAsync(user, account.Password);
             if (!result.Succeeded)
@@ -72,7 +72,7 @@ namespace Papa_Jhons.Controllers
                 {
                     ModelState.AddModelError("", message.Description);
                 }
-                return Redirect(Request.Headers["Referer"].ToString());
+                return RedirectToAction("Index", "Home");
             }
 
 
@@ -136,7 +136,7 @@ namespace Papa_Jhons.Controllers
             if (user is null)
             {
                 ModelState.AddModelError("", "Username or password is incorrect");
-                return Redirect(Request.Headers["Referer"].ToString());
+                return RedirectToAction("Index", "Home");
             }
 
             Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user, account.Password, account.RememberMe, true);
@@ -148,10 +148,10 @@ namespace Papa_Jhons.Controllers
                     ModelState.AddModelError("", "Due to your efforts, our account was blocked for 5 minutes");
                 }
                 ModelState.AddModelError("", "Username or password is incorrect");
-                return Redirect(Request.Headers["Referer"].ToString());
+                return RedirectToAction("Index", "Home");
             }
             TempData["Login"] = true;
-            return Redirect(Request.Headers["Referer"].ToString());
+            return RedirectToAction("Index", "Home");
 
         }
         public async Task<IActionResult> LogOut()
