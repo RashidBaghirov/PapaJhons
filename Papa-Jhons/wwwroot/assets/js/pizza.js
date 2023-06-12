@@ -32,3 +32,29 @@ plusButtons.forEach((pl, index) => {
         quantityInputs[index].value = count;
     }
 });
+
+
+
+function addToBasket(id) {
+    var quantity = parseInt($('.modal-count-value').text());
+
+    fetch('/AddBasket?id=' + id + '&quantity=' + quantity, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(response => {
+            if (response.ok) {
+                location.reload();
+            } else {
+                // Handle the error case
+                console.error('Add to Basket request failed');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+   });
+}

@@ -136,7 +136,7 @@ namespace Papa_Jhons.Controllers
             if (user is null)
             {
                 ModelState.AddModelError("", "Username or password is incorrect");
-                return RedirectToAction("Index", "Home");
+                return Redirect(Request.Headers["Referer"].ToString());
             }
 
             Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user, account.Password, account.RememberMe, true);
@@ -148,10 +148,10 @@ namespace Papa_Jhons.Controllers
                     ModelState.AddModelError("", "Due to your efforts, our account was blocked for 5 minutes");
                 }
                 ModelState.AddModelError("", "Username or password is incorrect");
-                return RedirectToAction("Index", "Home");
+                return Redirect(Request.Headers["Referer"].ToString());
             }
             TempData["Login"] = true;
-            return RedirectToAction("Index", "Home");
+            return Redirect(Request.Headers["Referer"].ToString());
 
         }
         public async Task<IActionResult> LogOut()
