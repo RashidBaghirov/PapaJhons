@@ -65,7 +65,7 @@ namespace Papa_Jhons.Areas.AdminAreas.Controllers
             if (contact is null) return Redirect("~/Error/Error");
             _context.Contact.Remove(contact);
             _context.SaveChanges();
-            return View(contact);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
