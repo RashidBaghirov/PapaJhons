@@ -48,7 +48,6 @@ function addToBasket(id) {
             if (response.ok) {
                 location.reload();
             } else {
-                // Handle the error case
                 console.error('Add to Basket request failed');
             }
         })
@@ -56,5 +55,5 @@ function addToBasket(id) {
             console.error('Error:', error);
         });
 }
-   });
-}
+
+
